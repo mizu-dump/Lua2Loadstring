@@ -1,0 +1,1 @@
+@小熊:loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/mhoho huh
