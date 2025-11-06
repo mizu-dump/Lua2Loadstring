@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MGEED7/G/refs/heads/main/Kurd%20hub.lua"))()
