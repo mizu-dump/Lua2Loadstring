@@ -1,0 +1,1 @@
+@ScriptOfGarden:loadstring(game:HttpGet("https://pastefy.app/Haf8hGyW/raw"))()
