@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/liamzawski/DREISCRIPTHUB/refs/heads/main/PLANTSvsBRAINROTS/REPLICATOR-DUPE-SPAWNER/LATESTNOLAG"))()
