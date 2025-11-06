@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NeroHubClub/PlsDonateAutoFarm/refs/heads/main/NeroAutoFarm",true))()
