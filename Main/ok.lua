@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99z/AhmadV99-Speed-Hub-X/refs/heads/main/Speed-Hub-X/Speed%25Hub%25.lua%22%2Ctrue"))()
