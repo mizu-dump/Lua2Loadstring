@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.gi thubusercontent.com/kurumimii/SaB-kurumi/refs/heads/main/kurumiscripts"))
