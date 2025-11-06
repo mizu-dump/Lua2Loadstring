@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/EP-74-PART-1-Toilet-Tower-Defense-The-Best-Op-Script-Auto-Farm-14614"))()
