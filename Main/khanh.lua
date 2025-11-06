@@ -1,0 +1,1 @@
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()Donets plss Dạo này hơi nghèo ae Donets 💸 1k hoi cũng được 😭ngân hàng : MBBANKStk : 12223052007Nguyễn Hoài Sinh     
