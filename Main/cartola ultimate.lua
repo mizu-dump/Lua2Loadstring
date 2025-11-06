@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Cat558-uz/Script-Op/refs/heads/main/Protected_2705659116955221.lua.txt"))() loadstring(game:HttpGet("https://rawscripts.net/raw/Brookhaven-RP-Cartola-Hub-58122"))()
