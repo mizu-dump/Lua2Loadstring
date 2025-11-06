@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Invoooker11/Outfit/main/OutfitCopier.lua", true))()
