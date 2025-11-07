@@ -1,0 +1,1 @@
+mloadstring(game:HttpGet("https://github.com/mizu-dump/Lua2Loadstring/raw/main/example.lua"))()
