@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/SpeedHubV5/RANDOMIZER-/refs/heads/main/Esp-kg/SPEED-HUB-X
