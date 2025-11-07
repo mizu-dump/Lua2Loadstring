@@ -1,0 +1,1 @@
+https://gist.githubusercontent.com/3T3RN4L9/6804bd4f7fcefd534b8e0037e3e845df/raw/79cbad6a40f683dfee0e782f4ab9d55ca7e89882/control%2520beta.lua
