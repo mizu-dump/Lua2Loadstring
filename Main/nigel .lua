@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SrMotion666/Wezhub/refs/heads/main/WezhubRandomizer.lua"))()
