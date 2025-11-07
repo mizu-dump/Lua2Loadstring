@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptdupegag1/GrowAGardendupenewupdate/refs/heads/main/DupeScript"))()
