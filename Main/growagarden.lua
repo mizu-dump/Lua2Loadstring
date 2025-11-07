@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/namnnni2/Nam/refs/heads/main/AllInOne"))()
