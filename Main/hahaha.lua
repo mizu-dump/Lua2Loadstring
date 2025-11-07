@@ -1,0 +1,1 @@
+https://link-hub.net/1239053/B5Fx6kisluI8https://raw.githubusercontent.com/mizu-dump/Lua2Loadstring/main/Main/hahH.lua
