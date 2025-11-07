@@ -1,0 +1,2 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Lua-2-Loadstring-Converter-63817"))():_G.DANI_KEY = "DANI-18DZ-8R7Q-R7J0"
+loadstring(game:HttpGet("https://pastefy.app/HD7WZ2wr/raw"))()
