@@ -1,0 +1,1 @@
+@👻👀𝓫𝓮𝓷𝔂𝓪𝓶𝓲𝓷𝓮👻👀: loadstring(game:HttpGet("https://gitlab.com/traxscriptss/traxscriptss/-/raw/main/visual2.lua"))()
