@@ -1,0 +1,1 @@
+@2007:getgenv().Version = "V1" getgenv().Team = "Marines" loadstring(game:HttpGet("https://raw.githubusercontent.com/TlDinhKhoi/Xeter/refs/heads/main/Main.l
