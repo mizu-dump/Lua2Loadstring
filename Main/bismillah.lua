@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/ANGEL!-Mount-Atin-OP-SCRIPT-AUTO-FARM-AND-SUMMIT-CHECKPOINTS-56364"))()
