@@ -1,0 +1,1 @@
+carregarstring(jogo:HttpGet("https://raw.githubusercontent.com/spacexrandom/Lua/main/FlingThingsAndPeople"))()
