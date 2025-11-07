@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/New-Car!-Car-Crushers-2-Physics-Simulation-Car-Crusher-2-49465'))()
