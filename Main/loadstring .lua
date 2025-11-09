@@ -1,0 +1,1 @@
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/snthnova/Snthnova-Hub/refs/heads/main/ProjectReverse.lua"))()
