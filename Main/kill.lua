@@ -1,0 +1,1 @@
+game.Players.vbwe_raka45.Character.Humanoid.Health = 15
