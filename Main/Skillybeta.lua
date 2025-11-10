@@ -1,0 +1,1 @@
+loadstring(game:HttpGet(https://raw.githubusercontent.com/SkillyBeta/PVB/refs/heads/main/DupeV2.gg"))()
