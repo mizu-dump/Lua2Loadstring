@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/SAB-Scriptz/NewStealABrainrotScript/main/WorkingScript.lua
