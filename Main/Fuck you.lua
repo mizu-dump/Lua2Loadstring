@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/Ultra-Toilet-Roleplay-2-REWORK-Get-All-Badges-36774"))()
