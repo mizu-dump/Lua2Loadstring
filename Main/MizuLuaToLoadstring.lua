@@ -1,0 +1,4 @@
+-- [ Mizu Scripts Https Links
+Yeeehhhaa ] --
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Lua2Loadstring/refs/heads/main/Main/Loader.lua"))()
