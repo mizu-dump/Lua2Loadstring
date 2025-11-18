@@ -1,0 +1,1 @@
+local plr = game.Players.LocalPlayer local hum = plr.Character.Humanoid local Anim = Instance.new("Animation") Anim.AnimationId = "rbxassetid://140290021376754" local track = hum:LoadAnimation(Anim) track:Play() track:AdjustSpeed(1.524)
