@@ -1,0 +1,1 @@
+gramatica and mărunt
