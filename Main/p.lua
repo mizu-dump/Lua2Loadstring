@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/HERO-fight-in-a-school-Pathos-40102"))()
