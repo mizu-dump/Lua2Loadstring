@@ -1,0 +1,4077 @@
+-- Decompiler will be improved VERY SOON!
+-- Decompiled with Konstant V2.1, a fast Luau decompiler made in Luau by plusgiant5 (https://discord.gg/brNTY8nX8t)
+-- Decompiled on 2025-12-06 10:40:38
+-- Luau version 6, Types version 3
+-- Time taken: 1.954046 seconds
+
+-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+local tbl_15_upvr = {
+	Scream1 = 51322486;
+	Scream2 = 90696602;
+	Fireball = 115157613365130;
+	MagicHit = 6875009415;
+	PlasmaExplosion = 174580476;
+	SwarmSummon = 663361028;
+	SwarmShoot = 2943064526;
+	SwarmHit = 183763487;
+	Dash = 5989939664;
+	Warp = 424195979;
+	Glitch1 = 5257382967;
+	Glitch2 = 6896112317;
+	Glitch3 = 8622488090;
+	Error = 261227592;
+	Shoot = 642890855;
+	Lightning1 = 5721273154;
+	Lightning2 = 1079408535;
+	Lightning3 = 821439273;
+	Lightning4 = 224339201;
+	TimeFreeze = 9058393493;
+	Laser1 = 415700134;
+	Laser2 = 138677306;
+	Explosion = 96730847431500;
+	OrbShoot = 763755889;
+	OrbShoot2 = 763718160;
+	OrbCharge = 73678054568493;
+	SwordSlash = 137628815514180;
+	StackOverflow = 101408037150094;
+	Stab = 7545764969;
+	StabHit = 5754299808;
+	Laugh = 103266469328776;
+	Goodbye = 118577633410597;
+	Stomp = 824687369;
+	Earthquake = 9114224721;
+	Crumble = 3744400428;
+	Explosion2 = 7157159568;
+	Outburst = 1368637781;
+	AccessDenied = 100234740939224;
+	Impact = 765590102;
+	Whooshing = 463598785;
+	Impact2 = 9043337722;
+	Stab1 = 444667824;
+	Stab2 = 444667844;
+	Stab3 = 444667859;
+	SpikeHit = 18600708424;
+}
+coroutine.resume(coroutine.create(function() -- Line 56
+	--[[ Upvalues[1]:
+		[1]: tbl_15_upvr (readonly)
+	]]
+	-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+	if _G["LoadedJohn DoeSounds"] == nil then
+		warn("Loading John Doe Sounds")
+		for _, v in pairs(tbl_15_upvr) do
+			table.insert({}, v)
+			local var1399
+		end
+		local Folder = Instance.new("Folder", workspace)
+		Folder.Name = "ToPreload"
+		game.Debris:AddItem(Folder, 10)
+		for _, v_2 in pairs(var1399) do
+			local Sound_4 = Instance.new("Sound", Folder)
+			Sound_4.SoundId = "rbxassetid://"..v_2
+			Sound_4.Volume = 0
+			local var1405
+		end
+		game:GetService("ContentProvider"):PreloadAsync({var1405})
+		var1405:Destroy()
+		warn("Loaded John Doe Sounds")
+		_G["LoadedJohn DoeSounds"] = true
+	end
+end))
+local BindableEvent_upvr_2 = Instance.new("BindableEvent")
+local Subaru112Assets_2 = game:GetService("ReplicatedStorage"):WaitForChild("Subaru112Assets")
+Subaru112Assets_2 = Subaru112Assets_2:WaitForChild("John Doe")
+local var1409_upvw = Subaru112Assets_2
+local RunService_upvr = game:GetService("RunService")
+local Angles_3 = CFrame.Angles
+local sin_upvr = math.sin
+local cos_upvr = math.cos
+local var1414_upvr = CFrame.new(0, 0, 0) * Angles_3((-math.pi/2), 0, math.pi)
+local cframe_upvr = CFrame.new(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1, -0)
+local var1416_upvr = CFrame.new(-0, 0, 0) * Angles_3(0, (math.pi/2), 0)
+local var1417_upvr = CFrame.new(0, 0, 0) * Angles_3(0, (-math.pi/2), 0)
+local var1418_upvr = CFrame.new(0.5, 0, 0) * Angles_3(0, (math.pi/2), 0)
+local var1419_upvr = CFrame.new(-0.5, 0, 0) * Angles_3(0, (-math.pi/2), 0)
+function O(arg1, arg2) -- Line 113
+	return arg1:inverse() * arg2 * arg1
+end
+local LocalPlayer_upvr = game.Players.LocalPlayer
+local Value_5_upvr = script:WaitForChild("char").Value
+local any_GetPlayerFromCharacter_result1_upvr = game.Players:GetPlayerFromCharacter(Value_5_upvr)
+local var1423
+if any_GetPlayerFromCharacter_result1_upvr == LocalPlayer_upvr then
+	var1423 = any_GetPlayerFromCharacter_result1_upvr:GetMouse()
+end
+local CurrentCamera_upvr = workspace.CurrentCamera
+local class_Humanoid_upvr_2 = Value_5_upvr:FindFirstChildOfClass("Humanoid")
+local Torso_3_upvr = Value_5_upvr.Torso
+local Left_Arm_upvr_2 = Value_5_upvr["Left Arm"]
+local Right_Arm_upvr_2 = Value_5_upvr["Right Arm"]
+local Right_Leg_upvr_2 = Value_5_upvr["Right Leg"]
+local HumanoidRootPart_4_upvr = Value_5_upvr.HumanoidRootPart
+local HumanoidRootPart_7_upvr = Value_5_upvr.HumanoidRootPart
+if not HumanoidRootPart_4_upvr:WaitForChild("LookGyro", 5) then
+	local BodyGyro_2 = Instance.new("BodyGyro")
+end
+local RootJoint_upvr = HumanoidRootPart_4_upvr:WaitForChild("RootJoint", 5)
+if not RootJoint_upvr then
+	RootJoint_upvr = HumanoidRootPart_4_upvr:WaitForChild("Root", 5)
+	if not RootJoint_upvr then
+		RootJoint_upvr = HumanoidRootPart_4_upvr:WaitForChild("Joint")
+	end
+end
+local Neck_upvr = Torso_3_upvr:WaitForChild("Neck")
+local Right_Shoulder_upvr = Torso_3_upvr:WaitForChild("Right Shoulder")
+local Left_Shoulder_upvr_2 = Torso_3_upvr:WaitForChild("Left Shoulder")
+local Right_Hip_upvr_2 = Torso_3_upvr:WaitForChild("Right Hip")
+local Left_Hip_upvr = Torso_3_upvr:WaitForChild("Left Hip")
+local Folder_4_upvr = Instance.new("Folder")
+Folder_4_upvr.Name = "Effects"
+local ObjectValue = Instance.new("ObjectValue", script)
+ObjectValue.Name = "Effects"
+ObjectValue.Value = Folder_4_upvr
+Folder_4_upvr.Parent = workspace
+local var1441 = require(Subaru112Assets_2:WaitForChild("Functions"))(Value_5_upvr, Folder_4_upvr)
+Tween = var1441.Tween -- Setting global
+fTween = var1441.fTween -- Setting global
+CastRay = var1441.CastRay -- Setting global
+Sound = var1441.Sound -- Setting global
+RandomRotation = var1441.RandomRotation -- Setting global
+RandomOrientation = var1441.RandomOrientation -- Setting global
+BoltRegular = var1441.BoltRegular -- Setting global
+RandomPosition = var1441.RandomPosition -- Setting global
+nb = var1441.nb -- Setting global
+Angles = var1441.Angles -- Setting global
+Orientation = var1441.Orientation -- Setting global
+lerp = var1441.lerp -- Setting global
+dlerp = var1441.dlerp -- Setting global
+Validate = var1441.ValidateHit -- Setting global
+Sphere = var1441.Sphere -- Setting global
+Slash = var1441.Slash -- Setting global
+Crater = var1441.Crater -- Setting global
+Debree = var1441.Debree -- Setting global
+KBStun = var1441.KBStun -- Setting global
+local var1442_upvw = 0
+local var1443_upvw = 0
+local var1444_upvw = 2
+local var1445_upvw = "Idle"
+local var1446_upvw = 1
+local var1447_upvw = 80704195472198
+local Sound_2_upvr = Instance.new("Sound", HumanoidRootPart_7_upvr)
+local var1449_upvw = "Default"
+local var1450_upvw = "Default"
+local var1451_upvw = false
+local var1452_upvw = false
+local var1453_upvw = false
+local var1454_upvw = false
+local var1455_upvw = false
+local tbl_319 = {}
+if any_GetPlayerFromCharacter_result1_upvr == LocalPlayer_upvr then
+	coroutine.resume(coroutine.create(function() -- Line 191
+		task.wait(0.25)
+		local StarterGui_upvr_2 = game:GetService("StarterGui")
+		pcall(function() -- Line 194
+			--[[ Upvalues[1]:
+				[1]: StarterGui_upvr_2 (readonly)
+			]]
+			StarterGui_upvr_2:SetCore("SendNotification", {
+				Title = "Credits";
+				Text = "Made by Subaru112\nTaunt Theme by Aden Mayo\nTaunt Animation by Flarebeorn\nCorrupted Eye from Forsaken's John Doe";
+				Duration = 5;
+			})
+		end)
+		task.wait(1)
+		pcall(function() -- Line 202
+			--[[ Upvalues[1]:
+				[1]: StarterGui_upvr_2 (readonly)
+			]]
+			StarterGui_upvr_2:SetCore("SendNotification", {
+				Title = "Important";
+				Text = "Character NOT finished, 2 more Phase 1 Moves and Phase 2 coming soon";
+				Duration = 5;
+			})
+		end)
+	end))
+end
+local tbl_276_upvr = {82961377873967, 134497255137960, 84377841178383, 125446112931781, 94354155767215, 112725018670938}
+local var1464_upvw = true
+coroutine.resume(coroutine.create(function() -- Line 218
+	--[[ Upvalues[3]:
+		[1]: CurrentCamera_upvr (readonly)
+		[2]: HumanoidRootPart_4_upvr (readonly)
+		[3]: var1464_upvw (read and write)
+	]]
+	while script and script.Parent do
+		task.wait(0.5)
+		local var1466 = CurrentCamera_upvr.CFrame.p - HumanoidRootPart_4_upvr.Position
+		if math.sqrt(var1466.X ^ 2 + var1466.Y ^ 2 + var1466.Z ^ 2) <= 20 then
+			var1464_upvw = true
+		else
+			var1464_upvw = false
+		end
+	end
+end))
+local Blade_upvr = Value_5_upvr:WaitForChild("Blade")
+local SwordWeld_upvr_2 = Blade_upvr:WaitForChild("SwordWeld")
+local C0_upvr = SwordWeld_upvr_2.C0
+local Morph_2 = Value_5_upvr:WaitForChild("Morph")
+function CorruptionAdded(arg1) -- Line 237
+	--[[ Upvalues[2]:
+		[1]: tbl_276_upvr (readonly)
+		[2]: var1464_upvw (read and write)
+	]]
+	-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+	if arg1 then
+		for _, v_3 in pairs(Enum.NormalId:GetEnumItems()) do
+			for i_4, v_4 in pairs(tbl_276_upvr) do
+				local Texture_upvr_2 = Instance.new("Texture", arg1)
+				Texture_upvr_2.Color3 = Color3.new(1, 0, 0)
+				Texture_upvr_2.Texture = "rbxassetid://"..v_4
+				Texture_upvr_2.Face = v_3
+				local var1495_upvr = 1.0471975511965976 * i_4 + math.random(1, 10) / 10 * math.pi
+				coroutine.resume(coroutine.create(function() -- Line 248
+					--[[ Upvalues[3]:
+						[1]: var1464_upvw (copied, read and write)
+						[2]: Texture_upvr_2 (readonly)
+						[3]: var1495_upvr (readonly)
+					]]
+					while true do
+						if var1464_upvw then
+							Texture_upvr_2.Transparency = math.cos(tick() + var1495_upvr) / 2 + 0.5
+							local var1496 = Texture_upvr_2
+							var1496.OffsetStudsV -= task.wait(0.025) / 10
+						else
+							task.wait(0.25)
+						end
+					end
+				end))
+				local _
+			end
+		end
+	end
+end
+for _, v_5 in pairs(Morph_2:GetDescendants()) do
+	if v_5.Name == "Corruption" then
+		CorruptionAdded(v_5)
+	end
+end
+Morph_2.DescendantAdded:Connect(function(arg1) -- Line 270
+	if arg1.Name == "Corruption" then
+		CorruptionAdded(arg1)
+	end
+end)
+local tbl_317_upvw = {}
+function StopAnimation() -- Line 281
+	--[[ Upvalues[1]:
+		[1]: tbl_317_upvw (read and write)
+	]]
+	for _, v_6 in pairs(tbl_317_upvw) do
+		v_6:Pause()
+	end
+end
+local tbl_323_upvw = {
+	RootJoint = {
+		O = false;
+		S = nil;
+		M = CFrame.new();
+	};
+	Neck = {
+		O = false;
+		S = nil;
+		M = CFrame.new();
+	};
+	RW = {
+		O = false;
+		S = nil;
+		M = CFrame.new();
+	};
+	LW = {
+		O = false;
+		S = nil;
+		M = CFrame.new();
+	};
+	RH = {
+		O = false;
+		S = nil;
+		M = CFrame.new();
+	};
+	LH = {
+		O = false;
+		S = nil;
+		M = CFrame.new();
+	};
+}
+function ResetAnimSets() -- Line 297
+	--[[ Upvalues[1]:
+		[1]: tbl_323_upvw (read and write)
+	]]
+	tbl_323_upvw = {
+		RootJoint = {
+			O = false;
+			S = nil;
+			M = CFrame.new();
+		};
+		Neck = {
+			O = false;
+			S = nil;
+			M = CFrame.new();
+		};
+		RW = {
+			O = false;
+			S = nil;
+			M = CFrame.new();
+		};
+		LW = {
+			O = false;
+			S = nil;
+			M = CFrame.new();
+		};
+		RH = {
+			O = false;
+			S = nil;
+			M = CFrame.new();
+		};
+		LH = {
+			O = false;
+			S = nil;
+			M = CFrame.new();
+		};
+	}
+end
+function FullOverride() -- Line 308
+	--[[ Upvalues[1]:
+		[1]: tbl_323_upvw (read and write)
+	]]
+	tbl_323_upvw.RootJoint.O = true
+	tbl_323_upvw.Neck.O = true
+	tbl_323_upvw.RW.O = true
+	tbl_323_upvw.LW.O = true
+	tbl_323_upvw.RH.O = true
+	tbl_323_upvw.LH.O = true
+end
+function FadeAnim(arg1, arg2, arg3, arg4) -- Line 317
+	--[[ Upvalues[1]:
+		[1]: tbl_323_upvw (read and write)
+	]]
+	for i_7, v_7 in pairs(tbl_323_upvw) do
+		if v_7.O == true then
+			table.insert({}, i_7)
+		end
+	end
+	ResetAnimSets()
+	-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+	for _, v_8_upvr in pairs({}) do
+		coroutine.resume(coroutine.create(function() -- Line 327
+			--[[ Upvalues[6]:
+				[1]: arg1 (readonly)
+				[2]: tbl_323_upvw (copied, read and write)
+				[3]: v_8_upvr (readonly)
+				[4]: arg2 (readonly)
+				[5]: arg3 (readonly)
+				[6]: arg4 (readonly)
+			]]
+			local NumberValue_upvr = Instance.new("NumberValue")
+			NumberValue_upvr.Value = arg1
+			tbl_323_upvw[v_8_upvr].S = NumberValue_upvr.Value
+			NumberValue_upvr.Changed:Connect(function() -- Line 332
+				--[[ Upvalues[3]:
+					[1]: tbl_323_upvw (copied, read and write)
+					[2]: v_8_upvr (copied, readonly)
+					[3]: NumberValue_upvr (readonly)
+				]]
+				tbl_323_upvw[v_8_upvr].S = NumberValue_upvr.Value
+			end)
+			Tween(NumberValue_upvr, {
+				Value = 1;
+			}, arg2, arg3, arg4, true)
+			game.Debris:AddItem(NumberValue_upvr, 0)
+		end))
+	end
+end
+function PlayAnimation(arg1, arg2, arg3) -- Line 342
+	--[[ Upvalues[16]:
+		[1]: tbl_323_upvw (read and write)
+		[2]: RootJoint_upvr (readonly)
+		[3]: var1414_upvr (readonly)
+		[4]: Neck_upvr (readonly)
+		[5]: cframe_upvr (readonly)
+		[6]: Right_Shoulder_upvr (readonly)
+		[7]: var1416_upvr (readonly)
+		[8]: Left_Shoulder_upvr_2 (readonly)
+		[9]: var1417_upvr (readonly)
+		[10]: Right_Hip_upvr_2 (readonly)
+		[11]: var1418_upvr (readonly)
+		[12]: Left_Hip_upvr (readonly)
+		[13]: var1419_upvr (readonly)
+		[14]: SwordWeld_upvr_2 (readonly)
+		[15]: C0_upvr (readonly)
+		[16]: tbl_317_upvw (read and write)
+	]]
+	-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+	local tbl_107 = {}
+	local var1577
+	if arg3 == nil then
+		local tbl_151_upvw = {}
+	end
+	if arg2 == nil then
+	end
+	if var1577[1] ~= nil then
+		local clone_44 = table.clone(var1577)
+		var1577 = {}
+		var1577.RootJoint = clone_44[1]
+		if clone_44[2] ~= nil then
+			var1577.Neck = clone_44[2]
+		end
+		if clone_44[3] ~= nil then
+			var1577.RW = clone_44[3]
+		end
+		if clone_44[4] ~= nil then
+			var1577.LW = clone_44[4]
+		end
+		if clone_44[5] ~= nil then
+			var1577.RH = clone_44[5]
+		end
+		if clone_44[6] ~= nil then
+			var1577.LH = clone_44[6]
+		end
+	end
+	for i_9, v_9 in pairs(var1577) do
+		if typeof(v_9) ~= "table" then
+			var1577[i_9] = {v_9}
+		end
+	end
+	if tbl_151_upvw.AllowOverride == true then
+		for i_10, _ in pairs(var1577) do
+			if tbl_323_upvw[i_10].O == true then
+				var1577[i_10] = nil
+			else
+				if tbl_323_upvw[i_10].S ~= nil then
+					if var1577[i_10].Speed == nil then
+						var1577[i_10].Speed = 1
+					end
+					local var1587 = var1577[i_10]
+					var1587.Speed *= tbl_323_upvw[i_10].S
+				end
+				var1577[i_10][1] = tbl_323_upvw[i_10].M * var1577[i_10][1]
+			end
+		end
+	end
+	if tbl_151_upvw.Mirror == true then
+		var1577 = {}
+		for i_11, v_11 in pairs(table.clone(var1577)) do
+			local any_ToEulerAnglesYXZ_result1_4, any_ToEulerAnglesYXZ_result2_4, any_ToEulerAnglesYXZ_result3_3 = v_11[1]:ToEulerAnglesYXZ()
+			v_11[1] = CFrame.new(v_11[1].Position * Vector3.new(-1, 1, 1)) * CFrame.fromOrientation(any_ToEulerAnglesYXZ_result1_4, -any_ToEulerAnglesYXZ_result2_4, -any_ToEulerAnglesYXZ_result3_3)
+			var1577[({
+				RootJoint = "RootJoint";
+				Neck = "Neck";
+				RW = "LW";
+				LW = "RW";
+				RH = "LH";
+				LH = "RH";
+			})[i_11]] = v_11
+			local _
+		end
+	end
+	if var1577.RootJoint ~= nil then
+		tbl_107[RootJoint_upvr] = var1577.RootJoint
+		local var1596 = tbl_107[RootJoint_upvr]
+		var1596[1] *= var1414_upvr
+	end
+	if var1577.Neck ~= nil then
+		tbl_107[Neck_upvr] = var1577.Neck
+		if tbl_151_upvw.NeckFix ~= false then
+			local _1_2 = tbl_107[Neck_upvr][1]
+			local any_ToEulerAnglesYXZ_result1_5, any_ToEulerAnglesYXZ_result2_5, any_ToEulerAnglesYXZ_result3_6 = _1_2:ToEulerAnglesYXZ()
+			i_11 = Neck_upvr
+			v_11 = cframe_upvr * CFrame.new(-_1_2.X, _1_2.Z, _1_2.Y)
+			i_11 = v_11 * CFrame.fromOrientation(-any_ToEulerAnglesYXZ_result1_5, any_ToEulerAnglesYXZ_result3_6, any_ToEulerAnglesYXZ_result2_5)
+			tbl_107[i_11][1] = i_11
+		end
+	end
+	if var1577.RW ~= nil then
+		tbl_107[Right_Shoulder_upvr] = var1577.RW
+		tbl_107[Right_Shoulder_upvr][1] = CFrame.new(1, 0.5, 0) * tbl_107[Right_Shoulder_upvr][1] * var1416_upvr
+	end
+	if var1577.LW ~= nil then
+		tbl_107[Left_Shoulder_upvr_2] = var1577.LW
+		tbl_107[Left_Shoulder_upvr_2][1] = CFrame.new(-1, 0.5, 0) * tbl_107[Left_Shoulder_upvr_2][1] * var1417_upvr
+	end
+	if var1577.RH ~= nil then
+		tbl_107[Right_Hip_upvr_2] = var1577.RH
+		tbl_107[Right_Hip_upvr_2][1] = CFrame.new(0.5, -1, 0) * tbl_107[Right_Hip_upvr_2][1] * var1418_upvr
+	end
+	if var1577.LH ~= nil then
+		tbl_107[Left_Hip_upvr] = var1577.LH
+		tbl_107[Left_Hip_upvr][1] = CFrame.new(-0.5, -1, 0) * tbl_107[Left_Hip_upvr][1] * var1419_upvr
+	end
+	if var1577.Sword ~= nil then
+		tbl_107[SwordWeld_upvr_2] = var1577.Sword
+		tbl_107[SwordWeld_upvr_2][1] = C0_upvr * tbl_107[SwordWeld_upvr_2][1]
+	end
+	local var1601
+	if tbl_151_upvw.Tween ~= true then
+		var1601 = tbl_107
+		local pairs_result1, pairs_result2_44, pairs_result3_16 = pairs(var1601)
+		for i_12, v_12 in pairs_result1, pairs_result2_44, pairs_result3_16 do
+			if tbl_151_upvw.Delta == nil then
+				i_12.C0 = i_12.C0:Lerp(v_12[1], (v_12.Speed or 1) * 1)
+			else
+				-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+				i_12.C0 = dlerp(i_12.C0, v_12[1], (v_12.Speed or 1) * 1, tbl_151_upvw.Delta)
+			end
+		end
+	else
+		tbl_317_upvw = {}
+		pairs_result2_44 = tbl_151_upvw.Wait
+		for i_13_upvr, v_13_upvr in pairs(tbl_107) do
+			local var1608_upvw = 0 + 1
+			local Wait_4 = tbl_151_upvw.Wait
+			if v_13_upvr.Wait ~= nil then
+				Wait_4 = v_13_upvr.Wait
+			end
+			if Wait_4 == nil then
+				Wait_4 = false
+			end
+			if Wait_4 == true then
+				pairs_result2_44 = true
+			end
+			local const_number_upvw_3 = 1
+			coroutine.resume(coroutine.create(function() -- Line 471
+				--[[ Upvalues[6]:
+					[1]: i_13_upvr (readonly)
+					[2]: v_13_upvr (readonly)
+					[3]: const_number_upvw_3 (read and write)
+					[4]: tbl_151_upvw (read and write)
+					[5]: tbl_317_upvw (copied, read and write)
+					[6]: var1608_upvw (read and write)
+				]]
+				local Style_3 = v_13_upvr.Style
+				if not Style_3 then
+					Style_3 = tbl_151_upvw.Style
+					if not Style_3 then
+						Style_3 = "Linear"
+					end
+				end
+				local Direction_3 = v_13_upvr.Direction
+				if not Direction_3 then
+					Direction_3 = tbl_151_upvw.Direction
+					if not Direction_3 then
+						Direction_3 = "Out"
+					end
+				end
+				table.insert(tbl_317_upvw, Tween(i_13_upvr, {
+					C0 = v_13_upvr[1];
+				}, (v_13_upvr.Speed or 1) * const_number_upvw_3, Style_3, Direction_3, true))
+				var1608_upvw -= 1
+			end))
+		end
+		if pairs_result2_44 == true then
+			repeat
+				task.wait((1/60))
+			until var1608_upvw <= 0
+		end
+	end
+end
+function NewAnim(arg1) -- Line 485
+	return {
+		Animation = {Angles(), Angles(), Angles(), Angles(), Angles(), Angles()};
+		Speed = arg1 or 0.1;
+	}
+end
+local tbl_62_upvr = {
+	Default = {
+		GlitchRJ = Angles();
+		GlitchN = Angles();
+		GlitchRW = Angles();
+		GlitchLW = Angles();
+		GlitchN2 = Angles();
+		GlitchRW2 = Angles();
+		GlitchLW2 = Angles();
+	};
+	Sword = {
+		GlitchRJ = Angles();
+		GlitchN = Angles();
+		GlitchRW = Angles();
+		GlitchLW = Angles();
+	};
+}
+function GetAnimation(arg1, arg2, arg3) -- Line 515
+	--[[ Upvalues[7]:
+		[1]: tbl_62_upvr (readonly)
+		[2]: var1442_upvw (read and write)
+		[3]: var1443_upvw (read and write)
+		[4]: class_Humanoid_upvr_2 (readonly)
+		[5]: cos_upvr (readonly)
+		[6]: sin_upvr (readonly)
+		[7]: HumanoidRootPart_7_upvr (readonly)
+	]]
+	-- KONSTANTERROR: [0] 1. Error Block 1 start (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [0] 1. Error Block 1 end (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [7] 7. Error Block 2 start (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [7] 7. Error Block 2 end (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [9] 8. Error Block 3 start (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [9] 8. Error Block 3 end (CF ANALYSIS FAILED)
+end
+local tbl_225_upvr = {}
+local tbl_59_upvr = {
+	Torso = "RootJoint";
+	Head = "Neck";
+	["Right Arm"] = "RW";
+	["Left Arm"] = "LW";
+	["Right Leg"] = "RH";
+	["Left Leg"] = "LH";
+	Blade = "Sword";
+}
+function Eval(arg1) -- Line 661
+	--[[ Upvalues[1]:
+		[1]: tbl_59_upvr (readonly)
+	]]
+	local module_2 = {}
+	for i_14, v_14 in pairs(arg1) do
+		if typeof(v_14) == "table" then
+			if v_14.CFrame ~= nil and tbl_59_upvr[i_14] then
+				module_2[tbl_59_upvr[i_14]] = {
+					CFrame = v_14.CFrame;
+					Style = v_14.Style;
+					Direction = v_14.Direction;
+				}
+			end
+			for i_15, v_15 in pairs(Eval(v_14)) do
+				module_2[i_15] = v_15
+			end
+		end
+	end
+	return module_2
+end
+for _, v_16 in pairs(var1409_upvw:WaitForChild("Animations"):children()) do
+	local tbl_125_upvr = {
+		RootJoint = {};
+		Neck = {};
+		RW = {};
+		LW = {};
+		RH = {};
+		LH = {};
+		Sword = {};
+	}
+	local tbl_285_upvr = {
+		RootJoint = var1414_upvr;
+		Neck = CFrame.new();
+		RW = var1416_upvr;
+		LW = var1417_upvr;
+		RH = var1418_upvr;
+		LH = var1419_upvr;
+		Sword = CFrame.new();
+	}
+	local tbl_290_upvr = {
+		Neck = cframe_upvr;
+	}
+	local var1648_upvw
+	for i_17, v_17 in pairs(require(v_16).Keyframes) do
+		var1648_upvw = math.max(i_17, var1648_upvw)
+		for i_18, v_18 in pairs(Eval(v_17)) do
+			table.insert(tbl_125_upvr[i_18], {
+				Time = i_17;
+				CFrame = v_18.CFrame;
+				Style = v_18.Style;
+				Direction = v_18.Direction;
+			})
+		end
+	end
+	for i_19, _ in pairs(tbl_125_upvr) do
+		table.sort(tbl_125_upvr[i_19], function(arg1, arg2) -- Line 718
+			local var1657
+			if arg1.Time >= arg2.Time then
+				var1657 = false
+			else
+				var1657 = true
+			end
+			return var1657
+		end)
+	end
+	local tbl_223_upvr = {}
+	local var1659_upvw = false
+	local var1660_upvw = false
+	function tbl_223_upvr.Play(arg1, arg2) -- Line 727
+		--[[ Upvalues[7]:
+			[1]: var1659_upvw (read and write)
+			[2]: var1660_upvw (read and write)
+			[3]: tbl_125_upvr (readonly)
+			[4]: tbl_285_upvr (readonly)
+			[5]: tbl_290_upvr (readonly)
+			[6]: var1648_upvw (read and write)
+			[7]: tbl_223_upvr (readonly)
+		]]
+		if arg2 == nil then
+			local tbl_284_upvw = {}
+		end
+		local var1666_upvr = tbl_284_upvw.Speed or 1
+		var1659_upvw = true
+		var1660_upvw = false
+		local var1667_upvw = false
+		if not tbl_284_upvw.Ignore then
+			local tbl_13_upvr = {}
+		end
+		if tbl_284_upvw.IgnoreLegs == true then
+			table.insert(tbl_13_upvr, "RH")
+			table.insert(tbl_13_upvr, "LH")
+		end
+		for i_20_upvr, v_20_upvr in pairs(tbl_125_upvr) do
+			coroutine.resume(coroutine.create(function() -- Line 741
+				--[[ Upvalues[9]:
+					[1]: tbl_285_upvr (copied, readonly)
+					[2]: i_20_upvr (readonly)
+					[3]: tbl_290_upvr (copied, readonly)
+					[4]: v_20_upvr (readonly)
+					[5]: var1659_upvw (copied, read and write)
+					[6]: var1667_upvw (read and write)
+					[7]: var1666_upvr (readonly)
+					[8]: tbl_13_upvr (readonly)
+					[9]: tbl_284_upvw (read and write)
+				]]
+				local var1677 = tbl_285_upvr[i_20_upvr]
+				local var1678
+				if not var1678 then
+					var1678 = CFrame.new()
+				end
+				for _, v_21 in ipairs(v_20_upvr) do
+					if var1659_upvw == true and var1667_upvw == false then
+						if table.find(tbl_13_upvr, i_20_upvr) == nil then
+							PlayAnimation({
+								[i_20_upvr] = var1678 * var1677 * v_21.CFrame * var1677:Inverse();
+							}, v_21.Time / var1666_upvr - 0, {
+								NeckFix = false;
+								Wait = true;
+								Tween = true;
+								Style = v_21.Style or "Linear";
+								Direction = v_21.Direction or "Out";
+							})
+						elseif tbl_284_upvw.Handler ~= nil then
+							local tbl_53 = {}
+							-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+							tbl_53.Goal = var1678 * var1677 * v_21.CFrame * var1677:Inverse()
+							-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+							tbl_53.Time = v_21.Time / var1666_upvr - 0
+							-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+							tbl_53.Style = v_21.Style or "Linear"
+							-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+							tbl_53.Direction = v_21.Direction or "Out"
+							tbl_284_upvw.Handler(i_20_upvr, tbl_53)
+						end
+					end
+				end
+			end))
+			local var1685_upvw
+		end
+		local var1686_upvr = var1648_upvw / var1666_upvr
+		local var1687_upvw = 0
+		coroutine.resume(coroutine.create(function() -- Line 775
+			--[[ Upvalues[5]:
+				[1]: var1687_upvw (read and write)
+				[2]: var1686_upvr (readonly)
+				[3]: var1660_upvw (copied, read and write)
+				[4]: var1659_upvw (copied, read and write)
+				[5]: var1685_upvw (read and write)
+			]]
+			repeat
+				var1687_upvw += task.wait((1/60))
+			until var1686_upvr <= var1687_upvw and var1660_upvw == true and var1659_upvw == false
+			var1659_upvw = false
+			var1685_upvw = true
+		end))
+		if tbl_284_upvw.Wait ~= false then
+			repeat
+			until var1686_upvr <= var1687_upvw and var1660_upvw == true and var1659_upvw == false and var1685_upvw == true
+			if tbl_284_upvw.ManualStop ~= true then
+				tbl_223_upvr:Stop()
+			end
+		end
+	end
+	function tbl_223_upvr.Stop(arg1) -- Line 793
+		--[[ Upvalues[2]:
+			[1]: var1660_upvw (read and write)
+			[2]: var1659_upvw (read and write)
+		]]
+		var1660_upvw = true
+		var1659_upvw = false
+		StopAnimation()
+	end
+	function tbl_223_upvr.GetLength(arg1) -- Line 798
+		--[[ Upvalues[1]:
+			[1]: var1648_upvw (read and write)
+		]]
+		return var1648_upvw
+	end
+	function tbl_223_upvr.IsPlaying(arg1) -- Line 801
+		--[[ Upvalues[1]:
+			[1]: var1659_upvw (read and write)
+		]]
+		return var1659_upvw
+	end
+	function tbl_223_upvr.Wait(arg1) -- Line 804
+		--[[ Upvalues[1]:
+			[1]: var1659_upvw (read and write)
+		]]
+		repeat
+		until var1659_upvw == false
+	end
+	tbl_225_upvr[v_16.Name] = tbl_223_upvr
+end
+local CFrameValue_upvr_10 = Instance.new("CFrameValue")
+local CFrameValue_upvr = Instance.new("CFrameValue")
+local CFrameValue_upvr_8 = Instance.new("CFrameValue")
+local CFrameValue_upvr_3 = Instance.new("CFrameValue")
+local CFrameValue_upvr_12 = Instance.new("CFrameValue")
+local CFrameValue_upvr_11 = Instance.new("CFrameValue")
+tbl_125_upvr = "CFrameValue"
+local any_upvr_5 = Instance.new(tbl_125_upvr)
+tbl_125_upvr = {}
+local var1696_upvr = tbl_125_upvr
+var1696_upvr.RootJoint = CFrameValue_upvr_10
+var1696_upvr.Neck = CFrameValue_upvr
+var1696_upvr.RW = CFrameValue_upvr_8
+var1696_upvr.LW = CFrameValue_upvr_3
+var1696_upvr.RH = CFrameValue_upvr_12
+var1696_upvr.LH = CFrameValue_upvr_11
+var1696_upvr.Sword = any_upvr_5
+function tbl_285_upvr() -- Line 830, Named "GetPose"
+	--[[ Upvalues[14]:
+		[1]: RootJoint_upvr (readonly)
+		[2]: var1414_upvr (readonly)
+		[3]: cframe_upvr (readonly)
+		[4]: Neck_upvr (readonly)
+		[5]: Right_Shoulder_upvr (readonly)
+		[6]: var1416_upvr (readonly)
+		[7]: Left_Shoulder_upvr_2 (readonly)
+		[8]: var1417_upvr (readonly)
+		[9]: Right_Hip_upvr_2 (readonly)
+		[10]: var1418_upvr (readonly)
+		[11]: Left_Hip_upvr (readonly)
+		[12]: var1419_upvr (readonly)
+		[13]: C0_upvr (readonly)
+		[14]: SwordWeld_upvr_2 (readonly)
+	]]
+	return {
+		RootJoint = RootJoint_upvr.C0 * var1414_upvr:Inverse();
+		Neck = cframe_upvr:inverse() * Neck_upvr.C0;
+		RW = (CFrame.new(-1, -0.5, 0)) * (Right_Shoulder_upvr.C0 * var1416_upvr:Inverse());
+		LW = (CFrame.new(1, -0.5, 0)) * (Left_Shoulder_upvr_2.C0 * var1417_upvr:Inverse());
+		RH = (CFrame.new(-0.5, 1, 0)) * (Right_Hip_upvr_2.C0 * var1418_upvr:Inverse());
+		LH = (CFrame.new(0.5, 1, 0)) * (Left_Hip_upvr.C0 * var1419_upvr:Inverse());
+		Sword = C0_upvr:inverse() * SwordWeld_upvr_2.C0;
+	}
+end
+GetPose = tbl_285_upvr -- Setting global
+function tbl_285_upvr() -- Line 843, Named "SetPose"
+	--[[ Upvalues[7]:
+		[1]: CFrameValue_upvr_10 (readonly)
+		[2]: CFrameValue_upvr (readonly)
+		[3]: CFrameValue_upvr_8 (readonly)
+		[4]: CFrameValue_upvr_3 (readonly)
+		[5]: CFrameValue_upvr_12 (readonly)
+		[6]: CFrameValue_upvr_11 (readonly)
+		[7]: any_upvr_5 (readonly)
+	]]
+	local GetPose_result1_2 = GetPose()
+	CFrameValue_upvr_10.Value = GetPose_result1_2.RootJoint
+	CFrameValue_upvr.Value = GetPose_result1_2.Neck
+	CFrameValue_upvr_8.Value = GetPose_result1_2.RW
+	CFrameValue_upvr_3.Value = GetPose_result1_2.LW
+	CFrameValue_upvr_12.Value = GetPose_result1_2.RH
+	CFrameValue_upvr_11.Value = GetPose_result1_2.LH
+	any_upvr_5.Value = GetPose_result1_2.Sword
+end
+SetPose = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 860, Named "OrbExplosion"
+	local var1700_upvr = arg1.Size or 1
+	local Position_upvr_2 = arg1.Position
+	local var1702_upvr = arg1.Time or 1.5
+	coroutine.resume(coroutine.create(function() -- Line 865
+		--[[ Upvalues[3]:
+			[1]: var1700_upvr (readonly)
+			[2]: Position_upvr_2 (readonly)
+			[3]: var1702_upvr (readonly)
+		]]
+		repeat
+			Sphere({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random(), 0, 0);
+				EndSize = Vector3.new(50, 50, 50) * var1700_upvr;
+				CFrame = CFrame.new(Position_upvr_2);
+				Size = Vector3.new(Vector3.new(1, 1, 1)) * var1700_upvr;
+				EndCFrameR = CFrame.new();
+			})
+			for _ = 1, 2 do
+				local var1705 = math.random(85, 115) / 100
+				Slash({
+					Speed = 0.25 * math.random(85, 115) / 100;
+					Direction = "Out";
+					Size = Vector3.new(1, 1, 1) * var1700_upvr;
+					Color = Color3.new(math.random(), 0, 0);
+					EndSize = Vector3.new(var1705 * 150, 2, var1705 * 150) * var1700_upvr;
+					CFrame = CFrame.new(Position_upvr_2) * Angles(0, math.random(-360, 360));
+				})
+				local var1707 = CFrame.new(Position_upvr_2) * RandomRotation(-360, 360)
+				Sphere({
+					Speed = 0.5 * math.random(85, 115) / 100;
+					Direction = "Out";
+					Color = Color3.new(math.random(), 0, 0);
+					Size = Vector3.new(0, 0, 5) * var1700_upvr;
+					EndCFrame = var1707 * CFrame.new(0, 0, -math.random(85, 125) * var1700_upvr);
+					EndSize = Vector3.new(5, 5, 30) * var1700_upvr;
+					CFrame = var1707;
+				})
+				local _ = {
+					Speed = 0.5 * math.random(85, 115) / 100;
+					Direction = "Out";
+					Color = Color3.new(math.random(), 0, 0);
+					Size = Vector3.new(0.5, 0.5, 5) * var1700_upvr;
+					CFrame = CFrame.new(Position_upvr_2) * RandomRotation(-360, 360);
+					EndSize = Vector3.new(2, 2, 30) * var1700_upvr;
+					EndCFrameR = RandomRotation(-15, 15) * CFrame.new(0, 0, -math.random(75, 100) * var1700_upvr);
+				}
+				local _ = {
+					Type = "Pixel";
+					Speed = 0.5 * math.random(85, 115) / 100;
+					Direction = "Out";
+					Color = Color3.new(math.random(), 0, 0);
+					Size = Vector3.new(2, 2, 2) * var1700_upvr;
+					CFrame = CFrame.new(Position_upvr_2) * RandomRotation(-360, 360);
+					EndSize = Vector3.new(1, 1, 1) * var1700_upvr;
+					EndCFrameR = RandomRotation(-15, 15) * CFrame.new(0, 0, -math.random(75, 125) * var1700_upvr);
+				}
+			end
+		until var1702_upvr <= 0 + task.wait((1/60))
+	end))
+end
+OrbExplosion = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 938, Named "Charge"
+	local Position_upvr_5 = arg1.Position
+	coroutine.resume(coroutine.create(function() -- Line 942
+		--[[ Upvalues[1]:
+			[1]: Position_upvr_5 (readonly)
+		]]
+		repeat
+			local var1713 = Position_upvr_5
+			if typeof(var1713) ~= "Vector3" then
+				var1713 = Position_upvr_5.Position
+			end
+			Sphere({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random(), 0, 0);
+				Size = Vector3.new(20, 20, 20);
+				CFrame = CFrame.new(var1713);
+				Transparency = 1;
+				EndTransparency = 0;
+				EndSize = Vector3.new(0, 0, 0);
+				EndCFrameR = CFrame.new();
+			})
+			local var1715 = math.random(85, 115) / 100
+			Slash({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				EndSize = Vector3.new(0, 0, 0);
+				Color = Color3.new(math.random(), 0, 0);
+				Size = Vector3.new(var1715 * 50, 2, var1715 * 50) * 1;
+				CFrame = CFrame.new(var1713) * Angles(0, math.random(-360, 360)) * RandomRotation(-30, 30);
+			})
+			local var1717 = CFrame.new(var1713) * RandomRotation(-360, 360)
+			Sphere({
+				Speed = 0.5 * math.random(85, 115) / 100;
+				Direction = "In";
+				Color = Color3.new(math.random(), 0, 0);
+				EndSize = Vector3.new(0, 0, 5);
+				CFrame = var1717 * CFrame.new(0, 0, -math.random(85, 125) * 1);
+				Size = Vector3.new(5, 5, 30);
+				EndCFrame = var1717;
+			})
+		until 0.75 <= 0 + task.wait((1/60))
+	end))
+end
+Charge = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1, arg2) -- Line 992, Named "MakeOrb"
+	--[[ Upvalues[1]:
+		[1]: var1409_upvw (read and write)
+	]]
+	if arg1 == nil then
+		local nb_result1_3 = nb()
+		nb_result1_3.Size = Vector3.new(0, 0, 0)
+		nb_result1_3.Transparency = 1
+	end
+	local Attachment_2 = Instance.new("Attachment", nb_result1_3)
+	for _, v_22 in pairs(var1409_upvw.Orb:children()) do
+		local clone_27 = v_22:Clone()
+		clone_27.Parent = Attachment_2
+		clone_27.Enabled = true
+		if arg2 == true and table.find({"Flame1", "Flame2", "GlowF"}, v_22.Name) then
+			local clone_31 = clone_27:Clone()
+			clone_31.Rate /= 2
+			clone_31.LockedToPart = false
+			clone_31.Parent = Attachment_2
+		end
+	end
+	return nb_result1_3
+end
+MakeOrb = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 1014, Named "Vein"
+	--[[ Upvalues[1]:
+		[1]: Folder_4_upvr (readonly)
+	]]
+	if arg1 == nil then
+		local tbl_232_upvw = {}
+	end
+	local Folder_3_upvr = Instance.new("Folder", Folder_4_upvr)
+	Folder_3_upvr.Name = "Veins"
+	local nb_result1_9_upvr = nb(Folder_3_upvr)
+	local CFrame_7 = tbl_232_upvw.CFrame
+	if not CFrame_7 then
+		CFrame_7 = CFrame.new(0, 9000000000, 0)
+	end
+	nb_result1_9_upvr.CFrame = CFrame_7
+	nb_result1_9_upvr.Transparency = 1
+	nb_result1_9_upvr.Size = Vector3.new(0, 0, 0)
+	local var1735_upvr = tbl_232_upvw.Speed or 0.25
+	local var1736_upvr = tbl_232_upvw.Arms or 6
+	if not tbl_232_upvw.Delay then
+	end
+	for i_24_upvr = 1, var1736_upvr do
+		local var1738_upvr = tbl_232_upvw.Amount or 10
+		local var1739_upvr = tbl_232_upvw.Length or 1
+		local var1740_upvr = tbl_232_upvw.Thickness or 0.25
+		local var1741_upvr = tbl_232_upvw.Height or 0.025
+		local var1742_upvr = tbl_232_upvw.Scale or 1
+		local tbl_236_upvr = {}
+		local tbl_72_upvr = {}
+		local var1745_upvr = tbl_232_upvw.Despawn or 2.5
+		local var1746_upvr = var1735_upvr / 2
+		coroutine.resume(coroutine.create(function() -- Line 1036
+			--[[ Upvalues[15]:
+				[1]: var1738_upvr (readonly)
+				[2]: var1739_upvr (readonly)
+				[3]: var1740_upvr (readonly)
+				[4]: var1741_upvr (readonly)
+				[5]: var1742_upvr (readonly)
+				[6]: Folder_3_upvr (readonly)
+				[7]: tbl_232_upvw (read and write)
+				[8]: nb_result1_9_upvr (readonly)
+				[9]: tbl_236_upvr (readonly)
+				[10]: i_24_upvr (readonly)
+				[11]: var1736_upvr (readonly)
+				[12]: tbl_72_upvr (readonly)
+				[13]: var1735_upvr (readonly)
+				[14]: var1745_upvr (readonly)
+				[15]: var1746_upvr (readonly)
+			]]
+			for i_25 = 0, var1738_upvr - 1 do
+				local var1749 = (var1738_upvr - i_25) / var1738_upvr
+				local var1750 = Vector3.new(var1740_upvr * var1749, var1741_upvr, var1739_upvr * var1749) * var1742_upvr
+				local nb_result1_12 = nb(Folder_3_upvr)
+				local Color_4 = tbl_232_upvw.Color
+				if not Color_4 then
+					Color_4 = Color3.new((1 * var1749) ^ 3, 0, 0)
+				end
+				nb_result1_12.Color = Color_4
+				nb_result1_12.Anchored = false
+				nb_result1_12.Size = Vector3.new(var1740_upvr * var1749, var1741_upvr, 0) * var1742_upvr
+				nb_result1_12.Material = "Neon"
+				nb_result1_12.Transparency = tbl_232_upvw.Transparency or 0
+				local Weld_4 = Instance.new("Weld", nb_result1_12)
+				if i_25 == 0 then
+					Weld_4.Part0 = nb_result1_9_upvr
+					tbl_236_upvr[i_24_upvr] = {nb_result1_12}
+					Weld_4.C0 = Angles(0, 360 / var1736_upvr * i_24_upvr)
+				else
+					Weld_4.Part0 = tbl_236_upvr[i_24_upvr][i_25]
+					Weld_4.C0 = CFrame.new(0, 0, -Weld_4.Part0.Size.Z / 2)
+					table.insert(tbl_236_upvr[i_24_upvr], nb_result1_12)
+				end
+				Weld_4.Part1 = nb_result1_12
+				Weld_4.C1 = CFrame.new(0, 0, 0) * Angles(0, math.random(-25, 25))
+				tbl_72_upvr[nb_result1_12] = var1750
+				local C0 = Weld_4.C0
+				if i_25 ~= 0 then
+					C0 = CFrame.new(0, 0, -tbl_72_upvr[Weld_4.Part0].Z / 2)
+				end
+				fTween(nb_result1_12, {
+					Size = var1750;
+				}, var1735_upvr)
+				fTween(Weld_4, {
+					C1 = CFrame.new(0, 0, var1750.Z / 2) * Angles(0, math.random(-35, 35));
+					C0 = C0;
+				}, var1735_upvr)
+				fTween(nb_result1_12, {
+					Color = Color3.new(0, 0, 0);
+					Transparency = 1;
+				}, var1745_upvr)
+				task.wait(var1746_upvr)
+			end
+			task.wait(var1745_upvr * 1.5 + var1735_upvr * 2)
+			game.Debris:AddItem(Folder_3_upvr, 0)
+		end))
+		local _
+	end
+	return nb_result1_9_upvr, Folder_3_upvr
+end
+Vein = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1, arg2) -- Line 1085, Named "KillFX"
+	--[[ Upvalues[4]:
+		[1]: Left_Arm_upvr_2 (readonly)
+		[2]: var1409_upvw (read and write)
+		[3]: HumanoidRootPart_4_upvr (readonly)
+		[4]: tbl_15_upvr (readonly)
+	]]
+	local Head = arg1:FindFirstChild("Head")
+	local Torso_2 = arg1:FindFirstChild("Torso")
+	if Torso_2 ~= nil then
+		local Model_upvr_2 = Instance.new("Model", workspace)
+		local clone_4_upvr = var1409_upvw.Bevel:Clone()
+		clone_4_upvr.Size = Torso_2.Size
+		clone_4_upvr.CFrame = Torso_2.CFrame
+		clone_4_upvr.BrickColor = BrickColor.new("Dark stone grey")
+		clone_4_upvr.Parent = Model_upvr_2
+		clone_4_upvr.Velocity = Torso_2.Velocity
+		local Knockback_2 = arg2.Knockback
+		if Knockback_2 ~= nil then
+			local BodyVelocity_6 = Instance.new("BodyVelocity", clone_4_upvr)
+			BodyVelocity_6.MaxForce = Vector3.new(8999999, 8999999, 8999999)
+			if typeof(Knockback_2[1]) == "Vector3" then
+				BodyVelocity_6.Velocity = (clone_4_upvr.Position - Knockback_2[1]).Unit * Knockback_2[2]
+			else
+				BodyVelocity_6.Velocity = Knockback_2[1].lookVector * Knockback_2[2]
+			end
+			game.Debris:AddItem(BodyVelocity_6, 0.25)
+			if Knockback_2[3] ~= nil then
+				local BodyAngularVelocity = Instance.new("BodyAngularVelocity", clone_4_upvr)
+				BodyAngularVelocity.MaxTorque = Vector3.new(8999999, 8999999, 8999999)
+				BodyAngularVelocity.AngularVelocity = Vector3.new(math.random(-Knockback_2[3], Knockback_2[3]), math.random(-Knockback_2[3], Knockback_2[3]), math.random(-Knockback_2[3], Knockback_2[3]))
+				game.Debris:AddItem(BodyAngularVelocity, 0.25)
+			end
+		end
+		for i_26, v_23 in pairs({arg1:FindFirstChild("Right Arm"), arg1:FindFirstChild("Left Arm"), arg1:FindFirstChild("Right Leg"), arg1:FindFirstChild("Left Leg")}) do
+			if v_23 ~= nil then
+				local clone_37 = var1409_upvw.Bevel:Clone()
+				clone_37.Size = v_23.Size
+				clone_37.CFrame = v_23.CFrame
+				clone_37.BrickColor = BrickColor.new("Medium stone grey")
+				clone_37.Parent = Model_upvr_2
+				clone_37.Velocity = v_23.Velocity
+			end
+		end
+		if Head ~= nil then
+			local clone_14 = var1409_upvw.HeadUnion:Clone()
+			clone_14.CFrame = Head.CFrame
+			clone_14.BrickColor = BrickColor.new("Medium stone grey")
+			clone_14.Parent = Model_upvr_2
+			i_26 = clone_14
+			Instance.new("Decal", i_26).Texture = "rbxasset://textures/face.png"
+		end
+		for _, v_24 in pairs(Model_upvr_2:children()) do
+			if v_24:IsA("BasePart") then
+				local clone_21 = var1409_upvw.KillVFX:Clone()
+				clone_21.Parent = v_24
+				clone_21.Enabled = true
+				local clone_9_upvr = var1409_upvw.CorruptionVFX:Clone()
+				clone_9_upvr.Parent = v_24
+				clone_9_upvr.Enabled = true
+				coroutine.resume(coroutine.create(function() -- Line 1151
+					--[[ Upvalues[1]:
+						[1]: clone_9_upvr (readonly)
+					]]
+					task.wait((1/60))
+					clone_9_upvr:Emit(10)
+					task.wait(0.5)
+					clone_9_upvr.Enabled = false
+				end))
+				if v_24 ~= clone_4_upvr then
+					local Weld_7 = Instance.new("Weld", v_24)
+					Weld_7.C1 = v_24.CFrame:ToObjectSpace(clone_4_upvr.CFrame)
+					Weld_7.Part0 = clone_4_upvr
+					Weld_7.Part1 = v_24
+				end
+			end
+		end
+		local pairs_result1_57, pairs_result2_54, pairs_result3_24 = pairs(Model_upvr_2:children())
+		for i_28, v_25 in pairs_result1_57, pairs_result2_54, pairs_result3_24 do
+			if v_25:IsA("BasePart") then
+				v_25.Anchored = false
+			end
+		end
+		pairs_result1_57 = false
+		local var1799_upvw = pairs_result1_57
+		if arg2.Injected == true then
+			i_28 = 0.75
+			v_25 = -1.5
+			i_28 = Angles
+			v_25 = -90
+			clone_9_upvr = -45
+			i_28 = i_28(v_25, 180, clone_9_upvr)
+			i_28 = "Weld"
+			v_25 = clone_4_upvr
+			local any_upvr_4 = Instance.new(i_28, v_25)
+			any_upvr_4.C0 = CFrame.new(i_28, v_25, -0.75) * i_28
+			any_upvr_4.Part0 = Left_Arm_upvr_2
+			any_upvr_4.Part1 = clone_4_upvr
+			var1799_upvw = true
+			i_28 = coroutine.resume
+			v_25 = coroutine.create
+			v_25 = v_25(function() -- Line 1183
+				--[[ Upvalues[3]:
+					[1]: any_upvr_4 (readonly)
+					[2]: clone_4_upvr (readonly)
+					[3]: HumanoidRootPart_4_upvr (copied, readonly)
+				]]
+				task.wait(0.8999999999999999)
+				any_upvr_4:Destroy()
+				local BodyVelocity_7 = Instance.new("BodyVelocity", clone_4_upvr)
+				BodyVelocity_7.MaxForce = Vector3.new(100000, 100000, 100000)
+				BodyVelocity_7.Velocity = (HumanoidRootPart_4_upvr.CFrame * Orientation(15, 85)).lookVector * 70
+				game.Debris:AddItem(BodyVelocity_7, 0.25)
+			end)
+			i_28(v_25)
+		end
+		any_upvr_4 = game
+		any_upvr_4.Debris:AddItem(Model_upvr_2, 10)
+		any_upvr_4 = coroutine.create
+		any_upvr_4 = any_upvr_4(function() -- Line 1195
+			--[[ Upvalues[4]:
+				[1]: tbl_15_upvr (copied, readonly)
+				[2]: clone_4_upvr (readonly)
+				[3]: var1799_upvw (read and write)
+				[4]: Model_upvr_2 (readonly)
+			]]
+			Sound({
+				Id = tbl_15_upvr.Glitch1;
+				Parent = clone_4_upvr;
+				Playing = true;
+				EmitterSize = 30;
+				Volume = 0.75;
+			})
+			if var1799_upvw == true then
+				task.wait(0.35)
+			end
+			task.wait(math.random(5, 20) / 10)
+			Sound({
+				Id = tbl_15_upvr.Glitch2;
+				Parent = clone_4_upvr;
+				Playing = true;
+				EmitterSize = 30;
+				Volume = 1.5;
+			})
+			for _ = 1, math.random(3, 7) do
+				local var1811 = math.random(50, 75) / 1000
+				for _, v_26 in pairs(Model_upvr_2:GetDescendants()) do
+					if v_26:IsA("BasePart") or v_26:IsA("Decal") then
+						v_26.Transparency = 1
+					elseif v_26:IsA("ParticleEmitter") then
+						v_26.Transparency = NumberSequence.new(1)
+					end
+				end
+				task.wait(var1811)
+				for _, v_27 in pairs(Model_upvr_2:GetDescendants()) do
+					if v_27:IsA("BasePart") or v_27:IsA("Decal") then
+						v_27.Transparency = 0
+					elseif v_27:IsA("ParticleEmitter") then
+						v_27.Transparency = NumberSequence.new({NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(0.625, 0), NumberSequenceKeypoint.new(1, 1)})
+					end
+				end
+				task.wait(var1811)
+			end
+			Model_upvr_2:Destroy()
+		end)
+		coroutine.resume(any_upvr_4)
+	end
+	Model_upvr_2 = pairs
+	clone_4_upvr = arg1:GetDescendants()
+	Model_upvr_2 = Model_upvr_2(clone_4_upvr)
+	for _, v_28 in Model_upvr_2(clone_4_upvr) do
+		if v_28:IsA("BasePart") then
+			v_28:Destroy()
+		end
+	end
+end
+KillFX = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 1250, Named "LightningVFX"
+	--[[ Upvalues[1]:
+		[1]: Folder_4_upvr (readonly)
+	]]
+	local Position_upvr_6 = arg1.Position
+	local Location = arg1.Location
+	if not Location then
+		Location = Position_upvr_6 + Vector3.new(math.random(-100, 100), 250, math.random(-100, 100))
+	end
+	coroutine.resume(coroutine.create(function() -- Line 1255
+		--[[ Upvalues[1]:
+			[1]: Position_upvr_6 (readonly)
+		]]
+		repeat
+			Sphere({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random(), 0, 0);
+				EndSize = Vector3.new(12.5, 12.5, 12.5);
+				CFrame = CFrame.new(Position_upvr_6);
+				Size = Vector3.new(Vector3.new(1, 1, 1)) * 0.25;
+				EndCFrameR = CFrame.new();
+			})
+			for _ = 1, 2 do
+				local var1847 = math.random(85, 115) / 100
+				Slash({
+					Speed = 0.25 * math.random(85, 115) / 100;
+					Direction = "Out";
+					Size = Vector3.new(0.25, 0.25, 0.25);
+					Color = Color3.new(math.random(), 0, 0);
+					EndSize = Vector3.new(var1847 * 150, 2, var1847 * 150) * 0.25;
+					CFrame = CFrame.new(Position_upvr_6) * Angles(0, math.random(-360, 360));
+				})
+			end
+			local var1849 = CFrame.new(Position_upvr_6) * RandomRotation(-360, 360)
+			Sphere({
+				Speed = 0.5 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random(), 0, 0);
+				Size = Vector3.new(0, 0, 1.25);
+				EndCFrame = var1849 * CFrame.new(0, 0, -math.random(85, 125) * 0.25);
+				EndSize = Vector3.new(1.25, 1.25, 7.5);
+				CFrame = var1849;
+			})
+			local _ = {
+				Speed = 0.5 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random(), 0, 0);
+				Size = Vector3.new(0.125, 0.125, 1.25);
+				CFrame = CFrame.new(Position_upvr_6) * RandomRotation(-360, 360);
+				EndSize = Vector3.new(0.5, 0.5, 7.5);
+				EndCFrameR = RandomRotation(-15, 15) * CFrame.new(0, 0, -math.random(75, 100) * 0.25);
+			}
+		until 0.5 <= 0 + task.wait(0.03333333333333333)
+	end))
+	local function r() -- Line 1315
+		return Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10)
+	end
+	local tbl_145 = {}
+	local BoltRegular_result1_2 = BoltRegular(Location + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), Position_upvr_6, {
+		Color = Color3.new(0, 0, 0);
+		Radius = 6;
+		Thickness = 1;
+		Relative = true;
+	})
+	for i_34, v_29 in pairs(BoltRegular_result1_2) do
+		local clone_3 = v_29:Clone()
+		clone_3.Size *= Vector3.new(2, 2, 1)
+		clone_3.Color = Color3.new(1, 0, 0)
+		clone_3.Transparency = 0.5
+		clone_3.Parent = Folder_4_upvr
+		;({})[i_34] = clone_3
+		local var1860
+	end
+	table.insert(tbl_145, BoltRegular_result1_2)
+	for _, v_30 in pairs(BoltRegular_result1_2) do
+		local SpecialMesh_4 = Instance.new("SpecialMesh", v_30)
+		SpecialMesh_4.MeshType = Enum.MeshType.Brick
+		SpecialMesh_4.Scale = v_30.Size
+		v_30.Size = Vector3.new(1, 1, 1)
+	end
+	for _, v_31 in pairs(var1860) do
+		local SpecialMesh_3 = Instance.new("SpecialMesh", v_31)
+		SpecialMesh_3.MeshType = Enum.MeshType.Brick
+		SpecialMesh_3.Scale = v_31.Size
+		v_31.Size = Vector3.new(1, 1, 1)
+	end
+	for _, v_32 in tbl_145 do
+		for i_38_upvr, v_33_upvr in ipairs(v_32) do
+			if i_38_upvr ~= #v_32 then
+			else
+			end
+			local var1873_upvr = var1860[i_38_upvr]
+			local var1874_upvr = v_32[i_38_upvr - 1]
+			local var1875_upvr = #v_32 - i_38_upvr
+			coroutine.resume(coroutine.create(function() -- Line 1357
+				--[[ Upvalues[5]:
+					[1]: v_33_upvr (readonly)
+					[2]: var1873_upvr (readonly)
+					[3]: var1874_upvr (readonly)
+					[4]: var1875_upvr (readonly)
+					[5]: i_38_upvr (readonly)
+				]]
+				local class_SpecialMesh_upvr_2 = v_33_upvr:FindFirstChildOfClass("SpecialMesh")
+				local var1877_upvw
+				if var1874_upvr ~= nil then
+					var1877_upvw = var1874_upvr:FindFirstChildOfClass("SpecialMesh")
+				end
+				local zero_cframe_upvr_4 = CFrame.new()
+				local X_upvr_2 = class_SpecialMesh_upvr_2.Scale.X
+				local class_SpecialMesh_upvr_3 = var1873_upvr:FindFirstChildOfClass("SpecialMesh")
+				coroutine.resume(coroutine.create(function() -- Line 1368
+					--[[ Upvalues[9]:
+						[1]: var1874_upvr (copied, readonly)
+						[2]: v_33_upvr (copied, readonly)
+						[3]: class_SpecialMesh_upvr_2 (readonly)
+						[4]: var1877_upvw (read and write)
+						[5]: var1875_upvr (copied, readonly)
+						[6]: zero_cframe_upvr_4 (readonly)
+						[7]: X_upvr_2 (readonly)
+						[8]: class_SpecialMesh_upvr_3 (readonly)
+						[9]: var1873_upvr (copied, readonly)
+					]]
+					repeat
+						local var1882 = math.random() * 100 * math.pi + task.wait((1/60))
+						local var1883
+						if var1874_upvr == nil then
+							var1883 = v_33_upvr.CFrame * CFrame.new(0, 0, class_SpecialMesh_upvr_2.Scale.Z / 2)
+						else
+							var1883 = var1874_upvr.CFrame * CFrame.new(0, 0, -var1877_upvw.Scale.Z / 2)
+						end
+						local var1884 = (v_33_upvr.CFrame * CFrame.new(0, 0, -class_SpecialMesh_upvr_2.Scale.Z / 2)) * (CFrame.new(math.random(-10, 10) / 100 * var1875_upvr / 10, math.random(-10, 10) / 100 * var1875_upvr / 10, math.random(-10, 10) / 100 * var1875_upvr / 10) * zero_cframe_upvr_4 * CFrame.new(math.cos(var1882 * 2) / 50 * var1875_upvr, math.sin(var1882 * 2) / 50 * var1875_upvr, math.sin(var1882 * 2 + 0.7853981633974483) / 50 * var1875_upvr))
+						local var1885 = X_upvr_2 * (math.cos(var1882 * 20) / 3 + 0.75)
+						class_SpecialMesh_upvr_2.Scale = Vector3.new(var1885, var1885, (var1883.p - var1884.p).Magnitude)
+						v_33_upvr.CFrame = CFrame.new(var1883.p, var1884.p) * CFrame.new(0, 0, -class_SpecialMesh_upvr_2.Scale.Z / 2)
+						class_SpecialMesh_upvr_3.Scale = class_SpecialMesh_upvr_2.Scale * Vector3.new(2, 2, 1.00999)
+						var1873_upvr.CFrame = v_33_upvr.CFrame
+						var1873_upvr.Transparency = 0.65 + v_33_upvr.Transparency / 2
+					until v_33_upvr == nil and v_33_upvr.Parent == nil
+				end))
+				task.wait(i_38_upvr * 0.05 * 0.5)
+				game.Debris:AddItem(v_33_upvr, 0.125)
+				if var1873_upvr ~= nil then
+					game.Debris:AddItem(var1873_upvr, 0.125)
+				end
+				Tween(v_33_upvr, {
+					Transparency = 1;
+				}, 0.125, "Linear", "Out", false)
+			end))
+		end
+	end
+end
+LightningVFX = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1, arg2) -- Line 1404, Named "Discharge"
+	--[[ Upvalues[1]:
+		[1]: Folder_4_upvr (readonly)
+	]]
+	for _ = 1, 5 do
+		local nb_result1_19 = nb(Folder_4_upvr)
+		nb_result1_19.Position = arg1
+		nb_result1_19.Shape = "Ball"
+		nb_result1_19.Color = Color3.new(math.random(), 0, 0)
+		nb_result1_19.Material = "Neon"
+		nb_result1_19.Size = Vector3.new(6, 6, 6) * math.random(50, 125) / 100
+		game.Debris:AddItem(nb_result1_19, 0.65 * arg2)
+		Tween(nb_result1_19, {
+			Size = Vector3.new(15, 15, 15) * math.random(50, 125) / 100;
+			Transparency = 1;
+		}, 0.5 * math.random(75, 125) / 100 * arg2, "Sine", "Out", false)
+	end
+end
+Discharge = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 1417, Named "DashLightning"
+	local Location_3 = arg1.Location
+	local Destination = arg1.Destination
+	local function _() -- Line 1421, Named "r"
+		return Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10)
+	end
+	Discharge(Location_3, 1)
+	Discharge(Destination, 2)
+	local tbl_230 = {}
+	table.insert(tbl_230, BoltRegular(Location_3 + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), Destination + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), {
+		Color = Color3.new(0, 0, 0);
+		Thickness = 0.5;
+	}))
+	for _ = 1, 3 do
+		table.insert(tbl_230, BoltRegular(Location_3 + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), Destination + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), {
+			Color = Color3.new(0, 0, 0);
+			Thickness = 0.5;
+			Radius = 2;
+			RadiusRandomness = 2;
+		}))
+		table.insert(tbl_230, BoltRegular(Location_3 + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), Destination + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), {
+			Color = Color3.new(1, 0, 0);
+			Thickness = 0.5;
+			Radius = 5;
+			RadiusRandomness = 2;
+			SegmentLength = 20;
+		}))
+		table.insert(tbl_230, BoltRegular(Location_3 + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), Destination + Vector3.new(math.random(-10, 10) / 10, math.random(-10, 10) / 10, math.random(-10, 10) / 10), {
+			Color = Color3.new(1, 0, 0);
+			Thickness = 0.5;
+			Transparency = 0.25;
+			Radius = 5;
+			Relative = true;
+			RadiusRandomness = 3;
+		}))
+	end
+	for _, v_34 in tbl_230 do
+		for i_42_upvr, v_35_upvr in ipairs(v_34) do
+			if i_42_upvr ~= #v_34 then
+			else
+			end
+			local var1911_upvr = v_34[i_42_upvr - 1]
+			coroutine.resume(coroutine.create(function() -- Line 1464
+				--[[ Upvalues[3]:
+					[1]: v_35_upvr (readonly)
+					[2]: var1911_upvr (readonly)
+					[3]: i_42_upvr (readonly)
+				]]
+				local zero_cframe_upvr_2 = CFrame.new()
+				local X_upvr_4 = v_35_upvr.Size.X
+				coroutine.resume(coroutine.create(function() -- Line 1468
+					--[[ Upvalues[4]:
+						[1]: var1911_upvr (copied, readonly)
+						[2]: v_35_upvr (copied, readonly)
+						[3]: zero_cframe_upvr_2 (readonly)
+						[4]: X_upvr_4 (readonly)
+					]]
+					repeat
+						local var1915 = math.random() * 100 * math.pi + task.wait((1/60))
+						local var1916
+						if var1911_upvr == nil then
+							var1916 = v_35_upvr.CFrame * CFrame.new(0, 0, v_35_upvr.Size.Z / 2)
+						else
+							var1916 = var1911_upvr.CFrame * CFrame.new(0, 0, -var1911_upvr.Size.Z / 2)
+						end
+						local var1917 = (v_35_upvr.CFrame * CFrame.new(0, 0, -v_35_upvr.Size.Z / 2)) * (CFrame.new(math.random(-10, 10) / 100, math.random(-10, 10) / 100, math.random(-10, 10) / 100) * zero_cframe_upvr_2 * CFrame.new(math.cos(var1915 * 2) / 50, math.sin(var1915 * 2) / 50, math.sin(var1915 * 2 + 0.7853981633974483) / 50))
+						local var1918 = X_upvr_4 * (math.cos(var1915 * 20) / 3 + 0.75)
+						v_35_upvr.Size = Vector3.new(var1918, var1918, (var1916.p - var1917.p).Magnitude)
+						v_35_upvr.CFrame = CFrame.new(var1916.p, var1917.p) * CFrame.new(0, 0, -v_35_upvr.Size.Z / 2)
+					until v_35_upvr == nil and v_35_upvr.Parent == nil
+				end))
+				local var1919 = 2
+				if v_35_upvr.Color.R <= 0.1 then
+					var1919 = 1
+				end
+				task.wait(i_42_upvr * 0.05 * var1919)
+				game.Debris:AddItem(v_35_upvr, var1919 * 0.25)
+				Tween(v_35_upvr, {
+					Transparency = 1;
+				}, var1919 * 0.25, "Linear", "Out", false)
+			end))
+		end
+	end
+end
+DashLightning = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 1500, Named "ExplosionSmall"
+	--[[ Upvalues[1]:
+		[1]: Folder_4_upvr (readonly)
+	]]
+	local CFrame_6 = arg1.CFrame
+	local var1926 = arg1.Size or 1
+	local MainColor_6 = arg1.MainColor
+	local var1928 = arg1.Duration or 1
+	for i_43 = 0, 1 do
+		local nb_result1_11 = nb(Folder_4_upvr)
+		local var1930
+		local function INLINED_13() -- Internal function, doesn't exist in bytecode
+			var1930 = MainColor_6
+			return var1930
+		end
+		if i_43 ~= 1 or not INLINED_13() then
+			var1930 = arg1.SecondaryColor
+		end
+		nb_result1_11.Color = var1930
+		var1930 = "Ball"
+		nb_result1_11.Shape = var1930
+		var1930 = Vector3.new(1, 1, 1) * (5 + i_43) * var1926
+		nb_result1_11.Size = var1930
+		var1930 = "Neon"
+		nb_result1_11.Material = var1930
+		var1930 = CFrame_6 * Angles(0, 0, 90)
+		nb_result1_11.CFrame = var1930
+		var1930 = 0 + i_43 * 0.25
+		nb_result1_11.Transparency = var1930
+		var1930 = game.Debris:AddItem
+		var1930(nb_result1_11, 0.5)
+		var1930 = Tween
+		var1930(nb_result1_11, {
+			Transparency = 1;
+			Size = nb_result1_11.Size * 6;
+		}, 0.35 * var1928, "Linear", "Out", false)
+	end
+	for _ = 1, 3 do
+		var1930 = math.random(30, 50) / 10
+		local var1932 = var1930 * var1926
+		var1930 = Slash
+		local tbl_172 = {
+			Speed = 0.25 * math.random(75, 175) / 100 * var1928;
+			Direction = "Out";
+		}
+		local var1934
+		local function INLINED_14() -- Internal function, doesn't exist in bytecode
+			var1934 = MainColor_6
+			return var1934
+		end
+		if math.random(1, 2) ~= 1 or not INLINED_14() then
+			var1934 = arg1.SecondaryColor
+		end
+		tbl_172.Color = var1934
+		var1934 = Vector3.new(var1932, 1, var1932)
+		tbl_172.Size = var1934
+		var1934 = Vector3.new(var1932 * 15, 1, var1932 * 15)
+		tbl_172.EndSize = var1934
+		var1934 = CFrame_6 * Angles(0, math.random(-360, 360))
+		tbl_172.CFrame = var1934
+		var1930(tbl_172)
+	end
+end
+ExplosionSmall = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 1533, Named "SparkSmall"
+	--[[ Upvalues[1]:
+		[1]: Folder_4_upvr (readonly)
+	]]
+	local CFrame_4 = arg1.CFrame
+	local var1940 = arg1.Size or 1
+	local MainColor_5 = arg1.MainColor
+	local var1942 = arg1.Duration or 1
+	for i_45 = 0, 1 do
+		local nb_result1_13 = nb(Folder_4_upvr)
+		local var1944
+		local function INLINED_15() -- Internal function, doesn't exist in bytecode
+			var1944 = MainColor_5
+			return var1944
+		end
+		if i_45 ~= 1 or not INLINED_15() then
+			var1944 = arg1.SecondaryColor
+		end
+		nb_result1_13.Color = var1944
+		var1944 = "Ball"
+		nb_result1_13.Shape = var1944
+		var1944 = Vector3.new(1, 1, 1) * (1 + i_45) * var1940
+		nb_result1_13.Size = var1944
+		var1944 = "Neon"
+		nb_result1_13.Material = var1944
+		var1944 = CFrame_4 * Angles(0, 0, 90)
+		nb_result1_13.CFrame = var1944
+		var1944 = 0 + i_45 * 0.25
+		nb_result1_13.Transparency = var1944
+		var1944 = game.Debris:AddItem
+		var1944(nb_result1_13, 0.5)
+		var1944 = Tween
+		var1944(nb_result1_13, {
+			Transparency = 1;
+			Size = nb_result1_13.Size * 3;
+		}, 0.25 * var1942, "Linear", "Out", false)
+	end
+	for _ = 1, arg1.Amount or 10 do
+		var1944 = {}
+		var1944.Speed = 0.25 * math.random(85, 150) / 100 * var1942
+		var1944.Direction = "Out"
+		local var1946
+		local function INLINED_16() -- Internal function, doesn't exist in bytecode
+			var1946 = MainColor_5
+			return var1946
+		end
+		if math.random(1, 2) ~= 1 or not INLINED_16() then
+			var1946 = arg1.SecondaryColor
+		end
+		var1944.Color = var1946
+		var1946 = Vector3.new(0.5, 0.5, 0.5) * var1940 * 2
+		var1944.Size = var1946
+		var1946 = CFrame_4 * RandomRotation(-360, 360)
+		var1944.CFrame = var1946
+		var1946 = Vector3.new(0, 0, 6) * var1940
+		var1944.EndSize = var1946
+		var1946 = RandomRotation(-15, 15) * CFrame.new(0, 0, -math.random(10, 20) * var1940)
+		var1944.EndCFrameR = var1946
+		Sphere(var1944)
+	end
+end
+SparkSmall = tbl_285_upvr -- Setting global
+function tbl_285_upvr(arg1) -- Line 1568, Named "MagicExplosion"
+	--[[ Upvalues[1]:
+		[1]: Folder_4_upvr (readonly)
+	]]
+	-- KONSTANTERROR: [0] 1. Error Block 30 start (CF ANALYSIS FAILED)
+	local CFrame_8 = arg1.CFrame
+	local var1952 = arg1.Size or 1
+	local MainColor_2 = arg1.MainColor
+	for i_47 = 0, 1 do
+		local nb_result1_7 = nb(Folder_4_upvr)
+		local var1955
+		local function INLINED_17() -- Internal function, doesn't exist in bytecode
+			var1955 = MainColor_2
+			return var1955
+		end
+		if i_47 ~= 1 or not INLINED_17() then
+			var1955 = arg1.SecondaryColor
+		end
+		nb_result1_7.Color = var1955
+		var1955 = "Ball"
+		nb_result1_7.Shape = var1955
+		var1955 = Vector3.new(1, 1, 1) * (5 + i_47) * var1952
+		nb_result1_7.Size = var1955
+		var1955 = "Neon"
+		nb_result1_7.Material = var1955
+		var1955 = CFrame_8 * Angles(0, 0, 90)
+		nb_result1_7.CFrame = var1955
+		var1955 = 0 + i_47 * 0.25
+		nb_result1_7.Transparency = var1955
+		var1955 = game.Debris:AddItem
+		var1955(nb_result1_7, 0.5)
+		var1955 = Tween
+		var1955(nb_result1_7, {
+			Transparency = 1;
+			Size = nb_result1_7.Size * 6;
+		}, 0.35, "Linear", "Out", false)
+	end
+	for _ = 1, arg1.Sparks or 35 do
+		var1955 = {}
+		var1955.Speed = 0.35 * math.random(85, 150) / 100
+		var1955.Direction = "Out"
+		local var1957
+		local function INLINED_18() -- Internal function, doesn't exist in bytecode
+			var1957 = MainColor_2
+			return var1957
+		end
+		if math.random(1, 2) ~= 1 or not INLINED_18() then
+			var1957 = arg1.SecondaryColor
+		end
+		var1955.Color = var1957
+		var1957 = Vector3.new(5, 5, 5) * var1952
+		var1955.Size = var1957
+		var1957 = CFrame_8 * RandomRotation(-360, 360)
+		var1955.CFrame = var1957
+		var1957 = Vector3.new(0, 0, 0)
+		var1955.EndSize = var1957
+		var1957 = RandomRotation(-15, 15) * CFrame.new(0, 0, -math.random(25, 50) * var1952)
+		var1955.EndCFrameR = var1957
+		Sphere(var1955)
+	end
+	local var1958 = math.random(30, 50) / 10
+	local tbl_210 = {
+		Speed = 0.35 * math.random(75, 175) / 100;
+		Direction = "Out";
+	}
+	if math.random(1, 2) == 1 then
+		local var1960 = MainColor_2
+		if not var1960 then
+			-- KONSTANTERROR: [184] 142. Error Block 16 start (CF ANALYSIS FAILED)
+			var1960 = arg1.SecondaryColor
+			-- KONSTANTERROR: [184] 142. Error Block 16 end (CF ANALYSIS FAILED)
+		end
+		tbl_210.Color = var1960
+		tbl_210.Size = Vector3.new(var1958, 1, var1958) * var1952
+		tbl_210.EndSize = Vector3.new(var1958 * 15, 1, var1958 * 15) * var1952
+		tbl_210.CFrame = CFrame_8 * Angles(0, math.random(-360, 360))
+		Slash(tbl_210)
+		-- KONSTANTWARNING: GOTO [153] #118
+	end
+	-- KONSTANTERROR: [0] 1. Error Block 30 end (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [184] 142. Error Block 16 start (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [184] 142. Error Block 16 end (CF ANALYSIS FAILED)
+end
+MagicExplosion = tbl_285_upvr -- Setting global
+tbl_285_upvr = pairs
+tbl_290_upvr = {}
+local var1961 = tbl_290_upvr
+var1961[1] = Value_5_upvr.Head
+var1961[2] = Torso_3_upvr
+var1961[3] = Right_Arm_upvr_2
+var1961[4] = Left_Arm_upvr_2
+var1961[5] = Right_Leg_upvr_2
+var1961[6] = Value_5_upvr["Left Leg"]
+tbl_285_upvr = tbl_285_upvr(var1961)
+local MagicExplosion_result1, MagicExplosion_result2, MagicExplosion_result3 = tbl_285_upvr(var1961)
+for _, v_36 in MagicExplosion_result1, MagicExplosion_result2, MagicExplosion_result3 do
+	local clone_10 = var1409_upvw.phaseemitter1:Clone()
+	local clone_30 = var1409_upvw.phaseemitter2:Clone()
+	clone_10.Enabled = false
+	clone_30.Enabled = false
+	clone_10.Rotation = NumberRange.new(90)
+	clone_30.Rotation = NumberRange.new(90)
+	clone_10.Parent = v_36
+	clone_30.Parent = v_36
+	table.insert(tbl_319, clone_10)
+	table.insert(tbl_319, clone_30)
+	local clone_38 = var1409_upvw.phaseemitter1:Clone()
+	local clone_23 = var1409_upvw.phaseemitter2:Clone()
+	clone_38.Enabled = false
+	clone_23.Enabled = false
+	clone_38.Rotation = NumberRange.new(-90)
+	clone_23.Rotation = NumberRange.new(-90)
+	clone_38.Parent = v_36
+	clone_23.Parent = v_36
+	table.insert(tbl_319, clone_38)
+	table.insert(tbl_319, clone_23)
+	local var1969_upvr
+end
+function MagicExplosion_result1() -- Line 1643
+end
+local var2097_upvw = MagicExplosion_result1
+MagicExplosion_result2 = {}
+local var1972_upvw = MagicExplosion_result2
+local function var1973_upvr(arg1, arg2) -- Line 1645
+	--[[ Upvalues[2]:
+		[1]: cframe_upvr (readonly)
+		[2]: var1696_upvr (readonly)
+	]]
+	local Goal = arg2.Goal
+	if arg1 == "Neck" then
+		Goal = cframe_upvr:Inverse() * Goal
+	end
+	Tween(var1696_upvr[arg1], {
+		Value = Goal;
+	}, arg2.Time, arg2.Style, arg2.Direction, true)
+end
+function SlashStart() -- Line 1654
+	--[[ Upvalues[11]:
+		[1]: var1451_upvw (read and write)
+		[2]: tbl_323_upvw (read and write)
+		[3]: Blade_upvr (readonly)
+		[4]: var1445_upvw (read and write)
+		[5]: BindableEvent_upvr_2 (readonly)
+		[6]: RootJoint_upvr (readonly)
+		[7]: var1414_upvr (readonly)
+		[8]: CFrameValue_upvr_10 (readonly)
+		[9]: CFrameValue_upvr_12 (readonly)
+		[10]: CFrameValue_upvr_11 (readonly)
+		[11]: var1972_upvw (read and write)
+	]]
+	var1451_upvw = true
+	tbl_323_upvw.Neck.O = true
+	tbl_323_upvw.RW.O = true
+	tbl_323_upvw.LW.O = true
+	local Trail_upvw = Blade_upvr.Trail
+	Trail_upvw.Enabled = true
+	local var1977_upvw
+	if var1977_upvw == "Idle" then
+		Trail_upvw = 1
+	else
+		Trail_upvw = 0
+	end
+	if var1445_upvw == "Idle" then
+		var1977_upvw = 1
+	else
+		var1977_upvw = 0
+	end
+	local any_Connect_result1 = BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 1664
+		--[[ Upvalues[9]:
+			[1]: var1445_upvw (copied, read and write)
+			[2]: Trail_upvw (read and write)
+			[3]: var1977_upvw (read and write)
+			[4]: RootJoint_upvr (copied, readonly)
+			[5]: var1414_upvr (copied, readonly)
+			[6]: CFrameValue_upvr_10 (copied, readonly)
+			[7]: tbl_323_upvw (copied, read and write)
+			[8]: CFrameValue_upvr_12 (copied, readonly)
+			[9]: CFrameValue_upvr_11 (copied, readonly)
+		]]
+		local var1979
+		if var1445_upvw == "Idle" then
+			var1979 = Trail_upvw + arg1 * 2
+			Trail_upvw = math.min(1, var1979)
+			var1979 = var1977_upvw - arg1 * 2
+			var1977_upvw = math.max(0, var1979)
+		else
+			var1979 = Trail_upvw - arg1 * 2
+			Trail_upvw = math.max(0, var1979)
+			var1979 = var1977_upvw + arg1 * 2
+			var1977_upvw = math.min(1, var1979)
+		end
+		var1979 = RootJoint_upvr
+		var1979 = var1414_upvr:Inverse()
+		var1979 = CFrame.new((var1979.C0 * var1979).p)
+		var1979 = var1979 * (CFrameValue_upvr_10.Value - CFrameValue_upvr_10.Value.p):Lerp(var1979.C0 * var1979, 0.1)
+		local var1981
+		local function INLINED_19() -- Internal function, doesn't exist in bytecode
+			var1979 = CFrameValue_upvr_10.Value
+			return var1979
+		end
+		if var1445_upvw ~= "Idle" or not INLINED_19() then
+			var1979 = var1979
+		end
+		if tbl_323_upvw.RootJoint.O == false then
+			local function INLINED_20() -- Internal function, doesn't exist in bytecode
+				var1981 = Trail_upvw
+				return var1981
+			end
+			if var1445_upvw ~= "Idle" or not INLINED_20() then
+				var1981 = var1977_upvw
+			end
+			PlayAnimation({
+				RootJoint = var1979;
+			}, math.max(0.1, var1981))
+		end
+		if tbl_323_upvw.RH.O == false and tbl_323_upvw.LH.O == false then
+			PlayAnimation({
+				RH = CFrameValue_upvr_12.Value;
+				LH = CFrameValue_upvr_11.Value;
+			}, Trail_upvw)
+		end
+	end)
+	table.insert(var1972_upvw, {any_Connect_result1, function() -- Line 1690
+		--[[ Upvalues[1]:
+			[1]: Trail_upvw (read and write)
+		]]
+		return Trail_upvw
+	end})
+	return any_Connect_result1
+end
+function SlashStop() -- Line 1695
+	--[[ Upvalues[4]:
+		[1]: Blade_upvr (readonly)
+		[2]: var1972_upvw (read and write)
+		[3]: tbl_323_upvw (read and write)
+		[4]: var1451_upvw (read and write)
+	]]
+	Blade_upvr.Trail.Enabled = false
+	local var1994
+	for _, v_37 in pairs(var1972_upvw) do
+		if v_37[2] ~= nil then
+		end
+		v_37[1]:Disconnect()
+	end
+	var1972_upvw = {}
+	tbl_323_upvw.RootJoint.O = true
+	if 0.5 <= nil then
+		FullOverride()
+	end
+	FadeAnim(0, 0.35, "Sine", "Out")
+	var1451_upvw = false
+end
+function SwordSlash(arg1) -- Line 1715
+	--[[ Upvalues[6]:
+		[1]: tbl_225_upvr (readonly)
+		[2]: any_GetPlayerFromCharacter_result1_upvr (readonly)
+		[3]: LocalPlayer_upvr (readonly)
+		[4]: HumanoidRootPart_4_upvr (readonly)
+		[5]: tbl_15_upvr (readonly)
+		[6]: var1973_upvr (readonly)
+	]]
+	if arg1 == nil then
+		local const_number_upvw_5 = 1
+	end
+	if const_number_upvw_5 == 1 then
+		SetPose()
+	end
+	if const_number_upvw_5 == 3 then
+		FullOverride()
+	end
+	local var2002 = ({{
+		Speed = 0.75;
+		Ignore = {"RootJoint", "RH", "LH"};
+	}, {
+		Speed = 1;
+		Ignore = {"RootJoint", "RH", "LH"};
+	}, {
+		Speed = 1;
+		Ignore = {};
+	}})[const_number_upvw_5]
+	local var2003_upvr = var2002.Speed * 1.25
+	coroutine.resume(coroutine.create(function() -- Line 1732
+		--[[ Upvalues[6]:
+			[1]: const_number_upvw_5 (read and write)
+			[2]: var2003_upvr (readonly)
+			[3]: any_GetPlayerFromCharacter_result1_upvr (copied, readonly)
+			[4]: LocalPlayer_upvr (copied, readonly)
+			[5]: HumanoidRootPart_4_upvr (copied, readonly)
+			[6]: tbl_15_upvr (copied, readonly)
+		]]
+		if const_number_upvw_5 == 1 then
+			task.wait(0.1 / var2003_upvr)
+		elseif const_number_upvw_5 == 2 then
+			task.wait(0.35 / var2003_upvr)
+		else
+			task.wait(0.3 / var2003_upvr)
+			if any_GetPlayerFromCharacter_result1_upvr == LocalPlayer_upvr then
+				local BodyVelocity_5_upvr = Instance.new("BodyVelocity", HumanoidRootPart_4_upvr)
+				BodyVelocity_5_upvr.MaxForce = Vector3.new(150000, 150000, 150000)
+				local Velocity_upvr = HumanoidRootPart_4_upvr.Velocity
+				BodyVelocity_5_upvr.Velocity = Vector3.new(1, 0, 1) * HumanoidRootPart_4_upvr.CFrame.lookVector * 60 + Velocity_upvr
+				coroutine.resume(coroutine.create(function() -- Line 1746
+					--[[ Upvalues[3]:
+						[1]: BodyVelocity_5_upvr (readonly)
+						[2]: HumanoidRootPart_4_upvr (copied, readonly)
+						[3]: Velocity_upvr (readonly)
+					]]
+					repeat
+						task.wait((1/60))
+						BodyVelocity_5_upvr.Velocity = HumanoidRootPart_4_upvr.CFrame.lookVector * 60 + Velocity_upvr
+					until BodyVelocity_5_upvr == nil and BodyVelocity_5_upvr.Parent == nil
+				end))
+				game.Debris:AddItem(BodyVelocity_5_upvr, 0.25)
+			end
+		end
+		BodyVelocity_5_upvr = Sound
+		Velocity_upvr = {}
+		local var2008 = Velocity_upvr
+		var2008.Id = tbl_15_upvr.SwordSlash
+		var2008.Volume = 2
+		var2008.Pitch = math.random(9, 11) / 10
+		var2008.Parent = HumanoidRootPart_4_upvr
+		var2008.Playing = true
+		var2008.EmitterSize = 10
+		var2008.TimePosition = 0.15
+		BodyVelocity_5_upvr(var2008, {
+			Temporary = true;
+		})
+	end))
+	tbl_225_upvr["SwordSlash"..const_number_upvw_5]:Play({
+		Speed = var2003_upvr;
+		Ignore = var2002.Ignore;
+		Handler = var1973_upvr;
+	})
+end
+function StackOverflow() -- Line 1769
+	--[[ Upvalues[19]:
+		[1]: var1451_upvw (read and write)
+		[2]: var1455_upvw (read and write)
+		[3]: class_Humanoid_upvr_2 (readonly)
+		[4]: var1444_upvw (read and write)
+		[5]: tbl_225_upvr (readonly)
+		[6]: var1445_upvw (read and write)
+		[7]: BindableEvent_upvr_2 (readonly)
+		[8]: RootJoint_upvr (readonly)
+		[9]: var1414_upvr (readonly)
+		[10]: CFrameValue_upvr_10 (readonly)
+		[11]: cframe_upvr (readonly)
+		[12]: CFrameValue_upvr (readonly)
+		[13]: CFrameValue_upvr_8 (readonly)
+		[14]: CFrameValue_upvr_3 (readonly)
+		[15]: tbl_323_upvw (read and write)
+		[16]: CFrameValue_upvr_12 (readonly)
+		[17]: CFrameValue_upvr_11 (readonly)
+		[18]: var1973_upvr (readonly)
+		[19]: Right_Arm_upvr_2 (readonly)
+	]]
+	var1451_upvw = true
+	var1455_upvw = true
+	class_Humanoid_upvr_2.WalkSpeed = 20
+	var1444_upvw = 4
+	local OverflowShoot_upvr_2 = tbl_225_upvr.OverflowShoot
+	local SetPose_6_upvw = SetPose
+	SetPose_6_upvw()
+	local var2013_upvw
+	if var2013_upvw == "Idle" then
+		SetPose_6_upvw = 1
+	else
+		SetPose_6_upvw = 0
+	end
+	if var1445_upvw == "Idle" then
+		var2013_upvw = 1
+	else
+		var2013_upvw = 0
+	end
+	local var2015_upvw = 0
+	coroutine.resume(coroutine.create(function() -- Line 1819
+		--[[ Upvalues[2]:
+			[1]: OverflowShoot_upvr_2 (readonly)
+			[2]: var1973_upvr (copied, readonly)
+		]]
+		OverflowShoot_upvr_2:Play({
+			Speed = 0.01;
+			Ignore = {"RH", "LH", "RootJoint", "Neck", "RW", "LW"};
+			Handler = var1973_upvr;
+		})
+	end))
+	task.wait(0.125)
+	local var2028_upvw = 0
+	local var2029_upvw = true
+	coroutine.resume(coroutine.create(function() -- Line 1823
+		--[[ Upvalues[5]:
+			[1]: var2028_upvw (read and write)
+			[2]: class_Humanoid_upvr_2 (copied, readonly)
+			[3]: OverflowShoot_upvr_2 (readonly)
+			[4]: var1973_upvr (copied, readonly)
+			[5]: var2029_upvw (read and write)
+		]]
+		repeat
+			local var2030
+			var2030 = var2028_upvw / 5
+			local clamped_upvr_2 = math.clamp(var2030, 0, 1)
+			local function INLINED_22() -- Internal function, doesn't exist in bytecode
+				var2030 = task.wait(0.25 - clamped_upvr_2 * 0.1)
+				return var2030
+			end
+			if var2028_upvw == 0 or not INLINED_22() then
+				var2030 = task.wait(0.05)
+			end
+			var2028_upvw += var2030
+			class_Humanoid_upvr_2.WalkSpeed = 20 - clamped_upvr_2 * 5
+			coroutine.resume(coroutine.create(function() -- Line 1829
+				--[[ Upvalues[3]:
+					[1]: OverflowShoot_upvr_2 (copied, readonly)
+					[2]: clamped_upvr_2 (readonly)
+					[3]: var1973_upvr (copied, readonly)
+				]]
+				OverflowShoot_upvr_2:Stop()
+				OverflowShoot_upvr_2:Play({
+					Speed = (0.25 - clamped_upvr_2 * 0.1) * 5;
+					Ignore = {"RH", "LH", "RootJoint", "Neck", "RW", "LW"};
+					Handler = var1973_upvr;
+				})
+			end))
+		until var2029_upvw == false
+	end))
+	repeat
+		task.wait(0.03333333333333333)
+		local var2035 = Right_Arm_upvr_2.CFrame * CFrame.new(0, -1, 0) * RandomRotation(-45, 45)
+		local var2036 = math.random(85, 115) / 125
+		Sphere({
+			Speed = 0.25 * math.random(85, 115) / 100;
+			Direction = "Out";
+			Color = Color3.new(math.random() / 2, 0, 0);
+			EndSize = Vector3.new(0, 0, 0);
+			CFrame = var2035;
+			Size = Vector3.new(1, 1, 1);
+			EndCFrameR = CFrame.new();
+		})
+		Slash({
+			Speed = 0.25 * math.random(85, 115) / 100;
+			Direction = "Out";
+			Size = Vector3.new(1, 1, 1);
+			Color = Color3.new(math.random() / 2, 0, 0);
+			EndSize = Vector3.new(var2036 * 10, 2, var2036 * 10);
+			CFrame = var2035 * RandomRotation(-360, 360);
+		})
+	until var1455_upvw == false
+	FullOverride()
+	BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 1785
+		--[[ Upvalues[14]:
+			[1]: var1445_upvw (copied, read and write)
+			[2]: SetPose_6_upvw (read and write)
+			[3]: var2013_upvw (read and write)
+			[4]: var2015_upvw (read and write)
+			[5]: RootJoint_upvr (copied, readonly)
+			[6]: var1414_upvr (copied, readonly)
+			[7]: CFrameValue_upvr_10 (copied, readonly)
+			[8]: cframe_upvr (copied, readonly)
+			[9]: CFrameValue_upvr (copied, readonly)
+			[10]: CFrameValue_upvr_8 (copied, readonly)
+			[11]: CFrameValue_upvr_3 (copied, readonly)
+			[12]: tbl_323_upvw (copied, read and write)
+			[13]: CFrameValue_upvr_12 (copied, readonly)
+			[14]: CFrameValue_upvr_11 (copied, readonly)
+		]]
+		-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+		local var2016
+		if var1445_upvw == "Idle" then
+			var2016 = SetPose_6_upvw + arg1 * 2
+			SetPose_6_upvw = math.min(1, var2016)
+			var2016 = var2013_upvw - arg1 * 2
+			var2013_upvw = math.max(0, var2016)
+		else
+			var2016 = SetPose_6_upvw - arg1 * 2
+			SetPose_6_upvw = math.max(0, var2016)
+			var2016 = var2013_upvw + arg1 * 2
+			var2013_upvw = math.min(1, var2016)
+		end
+		var2016 = var2015_upvw + arg1 * 2
+		var2015_upvw = math.min(1, var2016)
+		var2016 = RootJoint_upvr
+		var2016 = var1414_upvr:Inverse()
+		var2016 = CFrame.new((var2016.C0 * var2016).p)
+		var2016 = var2016 * (CFrameValue_upvr_10.Value - CFrameValue_upvr_10.Value.p):Lerp(var2016.C0 * var2016, 0.1)
+		local var2018
+		local function INLINED_21() -- Internal function, doesn't exist in bytecode
+			var2016 = CFrameValue_upvr_10.Value
+			return var2016
+		end
+		if var1445_upvw ~= "Idle" or not INLINED_21() then
+			var2016 = var2016
+		end
+		PlayAnimation({
+			Neck = {
+				Speed = 1;
+				cframe_upvr * CFrameValue_upvr.Value
+			};
+			RW = CFrameValue_upvr_8.Value;
+			LW = CFrameValue_upvr_3.Value;
+		}, var2015_upvw * 1, {
+			NeckFix = false;
+		})
+		if tbl_323_upvw.RootJoint.O == false then
+			if var1445_upvw ~= "Idle" or not SetPose_6_upvw then
+			end
+			PlayAnimation({
+				RootJoint = var2016;
+			}, math.max(0.1, var2013_upvw) * var2015_upvw)
+		end
+		if tbl_323_upvw.RH.O == false and tbl_323_upvw.LH.O == false then
+			PlayAnimation({
+				RH = CFrameValue_upvr_12.Value;
+				LH = CFrameValue_upvr_11.Value;
+			}, SetPose_6_upvw * var2015_upvw)
+		end
+	end):Disconnect()
+	FadeAnim(0, 0.5, "Sine", "Out")
+	var1444_upvw = 2
+	var2029_upvw = false
+	var1451_upvw = false
+end
+function CorruptedSwarm() -- Line 1871
+	--[[ Upvalues[18]:
+		[1]: var1451_upvw (read and write)
+		[2]: var1454_upvw (read and write)
+		[3]: class_Humanoid_upvr_2 (readonly)
+		[4]: var1445_upvw (read and write)
+		[5]: BindableEvent_upvr_2 (readonly)
+		[6]: RootJoint_upvr (readonly)
+		[7]: var1414_upvr (readonly)
+		[8]: CFrameValue_upvr_10 (readonly)
+		[9]: cframe_upvr (readonly)
+		[10]: CFrameValue_upvr (readonly)
+		[11]: CFrameValue_upvr_8 (readonly)
+		[12]: CFrameValue_upvr_3 (readonly)
+		[13]: tbl_323_upvw (read and write)
+		[14]: CFrameValue_upvr_12 (readonly)
+		[15]: CFrameValue_upvr_11 (readonly)
+		[16]: tbl_225_upvr (readonly)
+		[17]: var1973_upvr (readonly)
+		[18]: Left_Arm_upvr_2 (readonly)
+	]]
+	var1451_upvw = true
+	var1454_upvw = true
+	class_Humanoid_upvr_2.WalkSpeed = 16
+	local SetPose_7_upvw = SetPose
+	SetPose_7_upvw()
+	local var2040_upvw
+	if var2040_upvw == "Idle" then
+		SetPose_7_upvw = 1
+	else
+		SetPose_7_upvw = 0
+	end
+	if var1445_upvw == "Idle" then
+		var2040_upvw = 1
+	else
+		var2040_upvw = 0
+	end
+	local CorruptedSwarm_4_upvr = tbl_225_upvr.CorruptedSwarm
+	local SwarmHold_upvr_2 = tbl_225_upvr.SwarmHold
+	coroutine.resume(coroutine.create(function() -- Line 1915
+		--[[ Upvalues[2]:
+			[1]: CorruptedSwarm_4_upvr (readonly)
+			[2]: var1973_upvr (copied, readonly)
+		]]
+		CorruptedSwarm_4_upvr:Play({
+			Speed = 0.75;
+			Ignore = {"RH", "LH", "RootJoint", "Neck", "RW", "LW"};
+			Handler = var1973_upvr;
+		})
+	end))
+	local var2056_upvw = true
+	coroutine.resume(coroutine.create(function() -- Line 1919
+		--[[ Upvalues[4]:
+			[1]: var2056_upvw (read and write)
+			[2]: CorruptedSwarm_4_upvr (readonly)
+			[3]: SwarmHold_upvr_2 (readonly)
+			[4]: var1973_upvr (copied, readonly)
+		]]
+		repeat
+			task.wait((1/60))
+			if var2056_upvw and CorruptedSwarm_4_upvr:IsPlaying() == false and var2056_upvw == true then
+				SwarmHold_upvr_2:Stop()
+				SwarmHold_upvr_2:Play({
+					Speed = 0.25;
+					Ignore = {"RH", "LH", "RootJoint", "Neck", "RW", "LW"};
+					Handler = var1973_upvr;
+				})
+			end
+		until var2056_upvw == false
+	end))
+	coroutine.resume(coroutine.create(function() -- Line 1931
+		--[[ Upvalues[2]:
+			[1]: Left_Arm_upvr_2 (copied, readonly)
+			[2]: var2056_upvw (read and write)
+		]]
+		repeat
+			local var2061 = Left_Arm_upvr_2.CFrame * CFrame.new(0, -1, 0) * RandomRotation(-45, 45)
+			local var2062 = math.random(85, 115) / 125
+			Sphere({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random() / 2, 0, 0);
+				EndSize = Vector3.new(0, 0, 0);
+				CFrame = var2061;
+				Size = Vector3.new(1, 1, 1);
+				EndCFrameR = CFrame.new();
+			})
+			Slash({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Size = Vector3.new(1, 1, 1);
+				Color = Color3.new(math.random() / 2, 0, 0);
+				EndSize = Vector3.new(var2062 * 10, 2, var2062 * 10);
+				CFrame = var2061 * RandomRotation(-360, 360);
+			})
+		until var2056_upvw == false
+	end))
+	repeat
+		task.wait((1/60))
+	until var1454_upvw == false
+	var2056_upvw = false
+	if SwarmHold_upvr_2:IsPlaying() then
+		SwarmHold_upvr_2:Stop()
+	end
+	if CorruptedSwarm_4_upvr:IsPlaying() then
+		CorruptedSwarm_4_upvr:Stop()
+	end
+	FullOverride()
+	BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 1880
+		--[[ Upvalues[13]:
+			[1]: var1445_upvw (copied, read and write)
+			[2]: SetPose_7_upvw (read and write)
+			[3]: var2040_upvw (read and write)
+			[4]: RootJoint_upvr (copied, readonly)
+			[5]: var1414_upvr (copied, readonly)
+			[6]: CFrameValue_upvr_10 (copied, readonly)
+			[7]: cframe_upvr (copied, readonly)
+			[8]: CFrameValue_upvr (copied, readonly)
+			[9]: CFrameValue_upvr_8 (copied, readonly)
+			[10]: CFrameValue_upvr_3 (copied, readonly)
+			[11]: tbl_323_upvw (copied, read and write)
+			[12]: CFrameValue_upvr_12 (copied, readonly)
+			[13]: CFrameValue_upvr_11 (copied, readonly)
+		]]
+		-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+		local var2042
+		if var1445_upvw == "Idle" then
+			var2042 = SetPose_7_upvw + arg1 * 2
+			SetPose_7_upvw = math.min(1, var2042)
+			var2042 = var2040_upvw - arg1 * 2
+			var2040_upvw = math.max(0, var2042)
+		else
+			var2042 = SetPose_7_upvw - arg1 * 2
+			SetPose_7_upvw = math.max(0, var2042)
+			var2042 = var2040_upvw + arg1 * 2
+			var2040_upvw = math.min(1, var2042)
+		end
+		var2042 = RootJoint_upvr
+		var2042 = var1414_upvr:Inverse()
+		var2042 = CFrame.new((var2042.C0 * var2042).p)
+		var2042 = var2042 * (CFrameValue_upvr_10.Value - CFrameValue_upvr_10.Value.p):Lerp(var2042.C0 * var2042, 0.1)
+		local var2044
+		local function INLINED_23() -- Internal function, doesn't exist in bytecode
+			var2042 = CFrameValue_upvr_10.Value
+			return var2042
+		end
+		if var1445_upvw ~= "Idle" or not INLINED_23() then
+			var2042 = var2042
+		end
+		PlayAnimation({
+			Neck = {
+				Speed = 0.5;
+				cframe_upvr * CFrameValue_upvr.Value
+			};
+			RW = {
+				Speed = 0.25;
+				CFrameValue_upvr_8.Value
+			};
+			LW = CFrameValue_upvr_3.Value;
+		}, 1, {
+			NeckFix = false;
+		})
+		if tbl_323_upvw.RootJoint.O == false then
+			if var1445_upvw ~= "Idle" or not SetPose_7_upvw then
+			end
+			PlayAnimation({
+				RootJoint = var2042;
+			}, math.max(0.1, var2040_upvw) / 2)
+		end
+		if tbl_323_upvw.RH.O == false and tbl_323_upvw.LH.O == false then
+			PlayAnimation({
+				RH = CFrameValue_upvr_12.Value;
+				LH = CFrameValue_upvr_11.Value;
+			}, SetPose_7_upvw / 2)
+		end
+	end):Disconnect()
+	FadeAnim(0, 0.5, "Sine", "Out")
+	var1451_upvw = false
+end
+function FracturedData() -- Line 1990
+	--[[ Upvalues[5]:
+		[1]: var1451_upvw (read and write)
+		[2]: class_Humanoid_upvr_2 (readonly)
+		[3]: tbl_15_upvr (readonly)
+		[4]: HumanoidRootPart_4_upvr (readonly)
+		[5]: tbl_225_upvr (readonly)
+	]]
+	var1451_upvw = true
+	FullOverride()
+	class_Humanoid_upvr_2.WalkSpeed = 3
+	coroutine.resume(coroutine.create(function() -- Line 1994
+		--[[ Upvalues[2]:
+			[1]: tbl_15_upvr (copied, readonly)
+			[2]: HumanoidRootPart_4_upvr (copied, readonly)
+		]]
+		Sound({
+			Id = tbl_15_upvr.OrbCharge;
+			Parent = HumanoidRootPart_4_upvr;
+			Volume = 2;
+			Playing = true;
+		}, {
+			Temporary = true;
+		})
+		task.wait(0.75)
+		Sound({
+			Id = tbl_15_upvr.OrbShoot;
+			Parent = HumanoidRootPart_4_upvr;
+			Volume = 2;
+			Playing = true;
+		}, {
+			Temporary = true;
+		})
+	end))
+	tbl_225_upvr.FracturedData:Play()
+	FadeAnim(0, 0.5, "Sine", "In")
+	var1451_upvw = false
+end
+function LightningStorm() -- Line 2022
+	--[[ Upvalues[4]:
+		[1]: var1451_upvw (read and write)
+		[2]: class_Humanoid_upvr_2 (readonly)
+		[3]: tbl_15_upvr (readonly)
+		[4]: HumanoidRootPart_4_upvr (readonly)
+	]]
+	var1451_upvw = true
+	FullOverride()
+	class_Humanoid_upvr_2.WalkSpeed = 3
+	Sound({
+		Id = tbl_15_upvr.TimeFreeze;
+		Pitch = math.random(90, 110) / 100;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		EmitterSize = 30;
+		Volume = 2;
+		PlaybackRegionsEnabled = true;
+		PlaybackRegion = NumberRange.new(0.2, 8);
+	}, {
+		Temporary = true;
+	})
+	Charge({
+		Position = HumanoidRootPart_4_upvr;
+	})
+	PlayAnimation({CFrame.new(0, -0.6, 0) * Angles(-25) * CFrame.new(0, 0.5, 0), Angles(-30), CFrame.new(-0.4, -0.4, -0.35) * Angles(160, -5, -25) * Angles(0, -30), CFrame.new(0.6, -0.2, -0.5) * Angles(165, -7, 20) * Angles(0, 25), CFrame.new(0, 0, -0.2) * Angles(30, -15, 10), CFrame.new(0, 0, -0.2) * Angles(22.5, 18, -15)}, 0.35, {
+		Tween = true;
+		Wait = true;
+		Style = "Cubic";
+		Direction = "Out";
+	})
+	task.wait(0.75)
+	OrbExplosion({
+		Position = HumanoidRootPart_4_upvr.Position;
+		Size = 0.5;
+		Time = 0.25;
+	})
+	Sound({
+		Id = tbl_15_upvr.Explosion;
+		Pitch = math.random(90, 110) / 100;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		EmitterSize = 30;
+		Volume = 2;
+	}, {
+		Temporary = true;
+	})
+	Sound({
+		Id = tbl_15_upvr.Earthquake;
+		Pitch = math.random(90, 110) / 100;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		EmitterSize = 30;
+		Volume = 2;
+	}, {
+		Temporary = true;
+	})
+	PlayAnimation({CFrame.new(0, -0.7, 0) * Angles(15) * CFrame.new(0, 0.5, 0), Angles(20), CFrame.new(0, -0.1, 0) * Angles(100, 0, 80), CFrame.new(0, -0.1, 0) * Angles(100, 0, -80), CFrame.new(0, 0.2, -0.1) * Angles(-10, -15, 10), CFrame.new(0, 0.2, -0.2) * Angles(-17.5, 18, -15)}, 0.125, {
+		Tween = true;
+		Wait = true;
+		Style = "Sine";
+		Direction = "Out";
+	})
+	task.wait(0.05)
+	FadeAnim(0, 0.5, "Sine", "Out")
+	var1451_upvw = false
+end
+function FatalInjection() -- Line 2082
+	--[[ Upvalues[21]:
+		[1]: var1451_upvw (read and write)
+		[2]: class_Humanoid_upvr_2 (readonly)
+		[3]: BindableEvent_upvr_2 (readonly)
+		[4]: CFrameValue_upvr_10 (readonly)
+		[5]: cframe_upvr (readonly)
+		[6]: CFrameValue_upvr (readonly)
+		[7]: CFrameValue_upvr_8 (readonly)
+		[8]: CFrameValue_upvr_3 (readonly)
+		[9]: CFrameValue_upvr_12 (readonly)
+		[10]: CFrameValue_upvr_11 (readonly)
+		[11]: any_upvr_5 (readonly)
+		[12]: var1973_upvr (readonly)
+		[13]: var2097_upvw (read and write)
+		[14]: tbl_225_upvr (readonly)
+		[15]: tbl_15_upvr (readonly)
+		[16]: HumanoidRootPart_4_upvr (readonly)
+		[17]: Value_5_upvr (readonly)
+		[18]: var1409_upvw (read and write)
+		[19]: Torso_3_upvr (readonly)
+		[20]: Left_Arm_upvr_2 (readonly)
+		[21]: RunService_upvr (readonly)
+	]]
+	var1451_upvw = true
+	class_Humanoid_upvr_2.WalkSpeed = 3
+	local tbl_37_upvr = {}
+	local var2088_upvw = 0
+	local var2089_upvw = 1.5
+	local tbl_301_upvr = {
+		Ignore = {"RootJoint", "Neck", "RW", "LW", "RH", "LH", "Sword"};
+		Handler = var1973_upvr;
+	}
+	SetPose()
+	local var2094_upvw = false
+	local var2095_upvw
+	function var2097_upvw(arg1) -- Line 2106
+		--[[ Upvalues[3]:
+			[1]: var2095_upvw (read and write)
+			[2]: var2094_upvw (read and write)
+			[3]: var2097_upvw (copied, read and write)
+		]]
+		var2095_upvw = arg1 or nil
+		var2094_upvw = true
+		function var2097_upvw() -- Line 2109
+		end
+	end
+	coroutine.resume(coroutine.create(function() -- Line 2111
+		--[[ Upvalues[2]:
+			[1]: tbl_225_upvr (copied, readonly)
+			[2]: tbl_301_upvr (readonly)
+		]]
+		tbl_225_upvr.FatalInjection:Play(tbl_301_upvr)
+	end))
+	Sound({
+		Id = tbl_15_upvr.Laugh;
+		Volume = 1.25;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		Pitch = 1;
+		TimePosition = 0.85;
+		EmitterSize = 10;
+	}, {
+		Temporary = true;
+	})
+	local var2102_upvw = true
+	coroutine.resume(coroutine.create(function() -- Line 2124
+		--[[ Upvalues[7]:
+			[1]: HumanoidRootPart_4_upvr (copied, readonly)
+			[2]: Value_5_upvr (copied, readonly)
+			[3]: var1409_upvw (copied, read and write)
+			[4]: tbl_37_upvr (readonly)
+			[5]: tbl_15_upvr (copied, readonly)
+			[6]: Torso_3_upvr (copied, readonly)
+			[7]: var2102_upvw (read and write)
+		]]
+		task.wait(0.7)
+		for _ = 1, 2 do
+			for i_52 = 1, 5 do
+				local var2107 = math.random(9, 11) / 10 * (0.25 + (i_52 - 1) / 4)
+				Slash({
+					Speed = 0.35 * math.random(85, 115) / 100;
+					Direction = "Out";
+					Style = "Linear";
+					Size = Vector3.new(2, 1, 2) * var2107;
+					Color = Color3.new(math.random(), 0, 0);
+					EndSize = Vector3.new(10, 1, 10) * var2107;
+					CFrame = HumanoidRootPart_4_upvr.CFrame * Angles(90, math.random(-360, 360)) * RandomRotation(-10, 10);
+					EndCFrameR = CFrame.new(0, -(10 * (1 - i_52 / 5) ^ 2), 0) * Angles(0, math.random(-90, 90)) * RandomRotation(-5, 5);
+				})
+			end
+		end
+		for _, v_38 in pairs(Value_5_upvr:children()) do
+			if v_38:IsA("BasePart") then
+				if v_38.Name ~= "Aura" then
+					local clone_13 = var1409_upvw.CorruptionVFX:Clone()
+					clone_13.Parent = v_38
+					clone_13.Enabled = true
+					clone_13.LockedToPart = false
+					table.insert(tbl_37_upvr, clone_13)
+				end
+			end
+		end
+		Sound({
+			Id = tbl_15_upvr.Warp;
+			Parent = Torso_3_upvr;
+			Volume = 3;
+			Playing = true;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		Sound({
+			Id = tbl_15_upvr.Glitch3;
+			Parent = Torso_3_upvr;
+			Volume = 3;
+			Playing = true;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		coroutine.resume(coroutine.create(function() -- Line 2165
+			--[[ Upvalues[2]:
+				[1]: HumanoidRootPart_4_upvr (copied, readonly)
+				[2]: var2102_upvw (copied, read and write)
+			]]
+			repeat
+				task.wait((1/60))
+				Sphere({
+					Size = Vector3.new(0.20000, 0.20000, 5);
+					Color = Color3.new(math.random(), 0, 0);
+					CFrame = HumanoidRootPart_4_upvr.CFrame * CFrame.new(0, 0, 2.5) * CFrame.new(math.random(-30, 30) / 10, math.random(-30, 30) / 10, 0);
+					EndSize = Vector3.new(0.10000, 0.10000, 7.5);
+					EndCFrameR = CFrame.new(0, 0, -5);
+					Speed = (0.5) * (math.random(85, 115) / 100);
+					Style = "Sine";
+					Direction = "Out";
+				})
+			until var2102_upvw == false
+		end))
+		task.wait(0.5)
+		var2102_upvw = false
+	end))
+	repeat
+		task.wait((1/60))
+	until var2094_upvw ~= false and (var2094_upvw ~= false or tbl_225_upvr.FatalInjection:IsPlaying() == false)
+	for _, v_39 in pairs(tbl_37_upvr) do
+		v_39.Enabled = false
+		game.Debris:AddItem(v_39, 1)
+	end
+	var2102_upvw = false
+	if var2095_upvw ~= nil then
+		if var2095_upvw.Parent ~= nil then
+			local pairs_result1_38, pairs_result2_22, pairs_result3_70 = pairs(var2095_upvw.Parent:children())
+			for _, v_40_upvr in pairs_result1_38, pairs_result2_22, pairs_result3_70 do
+				if v_40_upvr:IsA("BasePart") then
+					local clone_32_upvr = var1409_upvw.CorruptionVFX:Clone()
+					clone_32_upvr.Parent = v_40_upvr
+					clone_32_upvr.Enabled = true
+					table.insert({}, clone_32_upvr)
+					coroutine.resume(coroutine.create(function() -- Line 2201
+						--[[ Upvalues[1]:
+							[1]: clone_32_upvr (readonly)
+						]]
+						task.wait(2.5)
+						clone_32_upvr.Enabled = false
+					end))
+					game.Debris:AddItem(clone_32_upvr, 3)
+					coroutine.resume(coroutine.create(function() -- Line 2207
+						--[[ Upvalues[2]:
+							[1]: v_40_upvr (readonly)
+							[2]: var1409_upvw (copied, read and write)
+						]]
+						task.wait(1.25)
+						local Size = v_40_upvr.Size
+						if v_40_upvr.Name == "Head" then
+							Size = v_40_upvr.Size.Y * Vector3.new(1, 1, 1)
+						end
+						Sphere({
+							Type = "Pixel";
+							CFrame = v_40_upvr.CFrame;
+							Size = Size + Vector3.new(0.10000, 0.10000, 0.10000);
+							Transparency = 0.25;
+							Color = Color3.new(1, 0, 0);
+							EndSize = v_40_upvr.Size / 2;
+							EndCFrame = CFrame.new(math.random(-1, 1) / 2, math.random(3, 5), math.random(-1, 1) / 2) * v_40_upvr.CFrame * RandomRotation(-75, 75);
+							Style = "Sine";
+							Direction = "In";
+							Speed = 1 * math.random(9, 11) / 10;
+							EndColor = Color3.new(0, 0, 0);
+						})
+						local clone_2 = var1409_upvw.Number:Clone()
+						clone_2.Parent = v_40_upvr
+						clone_2.Enabled = true
+						clone_2.ZOffset = 0.5
+						clone_2.Rate *= 2
+						game.Debris:AddItem(clone_2, 7.5)
+						task.wait(5)
+						clone_2.Enabled = false
+					end))
+				end
+			end
+			pairs_result3_70 = {}
+			pairs_result3_70.Time = 2.15
+			KBStun(var2095_upvw.Parent, pairs_result3_70)
+		end
+		local tbl_197 = {}
+		pairs_result3_70 = tbl_15_upvr.Goodbye
+		tbl_197.Id = pairs_result3_70
+		pairs_result3_70 = 1.25
+		tbl_197.Volume = pairs_result3_70
+		pairs_result3_70 = HumanoidRootPart_4_upvr
+		tbl_197.Parent = pairs_result3_70
+		pairs_result3_70 = true
+		tbl_197.Playing = pairs_result3_70
+		pairs_result3_70 = 1
+		tbl_197.Pitch = pairs_result3_70
+		pairs_result3_70 = 10
+		tbl_197.EmitterSize = pairs_result3_70
+		pairs_result3_70 = {}
+		pairs_result3_70.Temporary = true
+		Sound(tbl_197, pairs_result3_70)
+		FullOverride()
+		var2088_upvw = 0
+		var2089_upvw = 4
+		pairs_result3_70 = 0.75
+		pairs_result3_70 = Angles
+		clone_32_upvr = -45
+		pairs_result3_70 = pairs_result3_70(-90, 180, clone_32_upvr)
+		local var2132_upvr = CFrame.new(pairs_result3_70, -1.5, -0.75) * pairs_result3_70
+		function pairs_result3_70() -- Line 2253, Named "func"
+			--[[ Upvalues[3]:
+				[1]: var2095_upvw (read and write)
+				[2]: Left_Arm_upvr_2 (readonly)
+				[3]: var2132_upvr (readonly)
+			]]
+			var2095_upvw.Velocity = Vector3.new(0, 0, 0)
+			var2095_upvw.CFrame = Left_Arm_upvr_2.CFrame * var2132_upvr
+		end
+		clone_32_upvr = pairs_result3_70
+		clone_32_upvr = RunService_upvr
+		clone_32_upvr = coroutine.resume
+		local tbl_141_upvr = {}
+		local any_Connect_result1_3_upvr = RunService_upvr.RenderStepped:Connect(clone_32_upvr)
+		local any_Connect_result1_6_upvr = clone_32_upvr.Stepped:Connect(pairs_result3_70)
+		clone_32_upvr(coroutine.create(function() -- Line 2260
+			--[[ Upvalues[5]:
+				[1]: tbl_15_upvr (copied, readonly)
+				[2]: HumanoidRootPart_4_upvr (copied, readonly)
+				[3]: tbl_141_upvr (readonly)
+				[4]: any_Connect_result1_3_upvr (readonly)
+				[5]: any_Connect_result1_6_upvr (readonly)
+			]]
+			task.wait(1.1)
+			Sound({
+				Id = tbl_15_upvr.Stab;
+				Volume = 1;
+				Parent = HumanoidRootPart_4_upvr;
+				Playing = true;
+				Pitch = 1;
+			}, {
+				Temporary = true;
+			})
+			Sound({
+				Id = tbl_15_upvr.StabHit;
+				Volume = 1;
+				Parent = HumanoidRootPart_4_upvr;
+				Playing = true;
+				Pitch = 1.2;
+			}, {
+				Temporary = true;
+			})
+			Sound({
+				Id = tbl_15_upvr.SwordSlash;
+				Volume = 1;
+				Parent = HumanoidRootPart_4_upvr;
+				Playing = true;
+				TimePosition = 0.15;
+				Pitch = 0.8;
+			}, {
+				Temporary = true;
+			})
+			task.delay(0.15, function() -- Line 2284
+				--[[ Upvalues[1]:
+					[1]: tbl_141_upvr (copied, readonly)
+				]]
+				for _, v_41 in pairs(tbl_141_upvr) do
+					v_41:Emit(5)
+				end
+			end)
+			task.wait(1.0499999999999998)
+			any_Connect_result1_3_upvr:Disconnect()
+			any_Connect_result1_6_upvr:Disconnect()
+		end))
+		clone_32_upvr = tbl_225_upvr.FatalInjection:Stop
+		clone_32_upvr()
+		clone_32_upvr = tbl_225_upvr.FatalInjectionHit:Play
+		clone_32_upvr(tbl_301_upvr)
+	end
+	tbl_141_upvr = FullOverride
+	tbl_141_upvr()
+	tbl_141_upvr = BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 2090
+		--[[ Upvalues[10]:
+			[1]: var2088_upvw (read and write)
+			[2]: var2089_upvw (read and write)
+			[3]: CFrameValue_upvr_10 (copied, readonly)
+			[4]: cframe_upvr (copied, readonly)
+			[5]: CFrameValue_upvr (copied, readonly)
+			[6]: CFrameValue_upvr_8 (copied, readonly)
+			[7]: CFrameValue_upvr_3 (copied, readonly)
+			[8]: CFrameValue_upvr_12 (copied, readonly)
+			[9]: CFrameValue_upvr_11 (copied, readonly)
+			[10]: any_upvr_5 (copied, readonly)
+		]]
+		var2088_upvw = math.min(1, var2088_upvw + arg1 * var2089_upvw)
+		PlayAnimation({
+			RootJoint = CFrameValue_upvr_10.Value;
+			Neck = cframe_upvr * CFrameValue_upvr.Value;
+			RW = CFrameValue_upvr_8.Value;
+			LW = CFrameValue_upvr_3.Value;
+			RH = CFrameValue_upvr_12.Value;
+			LH = CFrameValue_upvr_11.Value;
+			Sword = any_upvr_5.Value;
+		}, var2088_upvw * 1, {
+			NeckFix = false;
+		})
+	end):Disconnect
+	tbl_141_upvr()
+	tbl_141_upvr = FadeAnim
+	var2132_upvr = 0
+	tbl_141_upvr(var2132_upvr, 1, "Sine", "Out")
+	tbl_141_upvr = false
+	var1451_upvw = tbl_141_upvr
+end
+local VFX_upvr_2 = Subaru112Assets_2:WaitForChild("VFX")
+function DataDump() -- Line 2303
+	--[[ Upvalues[20]:
+		[1]: var1451_upvw (read and write)
+		[2]: class_Humanoid_upvr_2 (readonly)
+		[3]: BindableEvent_upvr_2 (readonly)
+		[4]: CFrameValue_upvr_10 (readonly)
+		[5]: cframe_upvr (readonly)
+		[6]: CFrameValue_upvr (readonly)
+		[7]: CFrameValue_upvr_8 (readonly)
+		[8]: CFrameValue_upvr_3 (readonly)
+		[9]: CFrameValue_upvr_12 (readonly)
+		[10]: CFrameValue_upvr_11 (readonly)
+		[11]: any_upvr_5 (readonly)
+		[12]: var1973_upvr (readonly)
+		[13]: Right_Leg_upvr_2 (readonly)
+		[14]: HumanoidRootPart_4_upvr (readonly)
+		[15]: Value_5_upvr (readonly)
+		[16]: Folder_4_upvr (readonly)
+		[17]: tbl_15_upvr (readonly)
+		[18]: VFX_upvr_2 (readonly)
+		[19]: var1409_upvw (read and write)
+		[20]: tbl_225_upvr (readonly)
+	]]
+	var1451_upvw = true
+	class_Humanoid_upvr_2.WalkSpeed = 3
+	local var2151_upvw = 0
+	SetPose()
+	local var2156_upvw = true
+	coroutine.resume(coroutine.create(function() -- Line 2325
+		--[[ Upvalues[2]:
+			[1]: Right_Leg_upvr_2 (copied, readonly)
+			[2]: var2156_upvw (read and write)
+		]]
+		task.wait(0.1)
+		repeat
+			local var2158 = Right_Leg_upvr_2.CFrame * CFrame.new(0, -1, 0) * RandomRotation(-45, 45)
+			local var2159 = math.random(85, 115) / 125
+			Sphere({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random() / 2, 0, 0);
+				EndSize = Vector3.new(0, 0, 0);
+				CFrame = var2158;
+				Size = Vector3.new(1, 1, 1);
+				EndCFrameR = CFrame.new();
+			})
+			Slash({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Size = Vector3.new(1, 1, 1);
+				Color = Color3.new(math.random() / 2, 0, 0);
+				EndSize = Vector3.new(var2159 * 10, 2, var2159 * 10);
+				CFrame = var2158 * RandomRotation(-360, 360);
+			})
+		until var2156_upvw == false
+	end))
+	coroutine.resume(coroutine.create(function() -- Line 2355
+		--[[ Upvalues[7]:
+			[1]: var2156_upvw (read and write)
+			[2]: HumanoidRootPart_4_upvr (copied, readonly)
+			[3]: Value_5_upvr (copied, readonly)
+			[4]: Folder_4_upvr (copied, readonly)
+			[5]: tbl_15_upvr (copied, readonly)
+			[6]: VFX_upvr_2 (copied, readonly)
+			[7]: var1409_upvw (copied, read and write)
+		]]
+		task.wait(0.535)
+		var2156_upvw = false
+		local var2169 = HumanoidRootPart_4_upvr.CFrame * CFrame.new(0, 0, -2)
+		local CastRay_result1_12_upvr = CastRay(var2169.Position, var2169.Position - Vector3.new(0, 1, 0), 5, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+		if Validate(CastRay_result1_12_upvr) then
+			local nb_result1_17 = nb(Folder_4_upvr)
+			nb_result1_17.CFrame = CFrame.new(CastRay_result1_12_upvr.Position)
+			nb_result1_17.Transparency = 1
+			nb_result1_17.Size = Vector3.new(0, 0, 0)
+			game.Debris:AddItem(nb_result1_17, 15)
+			Sound({
+				Id = tbl_15_upvr.Stomp;
+				Parent = nb_result1_17;
+				Volume = 1.5;
+				EmitterSize = 30;
+				Playing = true;
+			})
+			Sound({
+				Id = tbl_15_upvr.Crumble;
+				Parent = nb_result1_17;
+				Volume = 1.125;
+				EmitterSize = 30;
+				Playing = true;
+			})
+			Sound({
+				Id = tbl_15_upvr.Earthquake;
+				Parent = nb_result1_17;
+				Volume = 1.125;
+				EmitterSize = 30;
+				Playing = true;
+			})
+			Sound({
+				Id = tbl_15_upvr.Explosion2;
+				Parent = nb_result1_17;
+				Volume = 1.5;
+				EmitterSize = 30;
+				Playing = true;
+			})
+			coroutine.resume(coroutine.create(function() -- Line 2416
+				--[[ Upvalues[3]:
+					[1]: CastRay_result1_12_upvr (readonly)
+					[2]: VFX_upvr_2 (copied, readonly)
+					[3]: Folder_4_upvr (copied, readonly)
+				]]
+				for _ = 1, 4 do
+					local var2179 = Vector3.new(3.73200, 3.55250, 4.30999) * math.random(8, 12) / 10
+					local var2180 = Vector3.new(102.630, 10.6575, 118.525) * math.random(8, 12) / 10
+					local var2181 = CFrame.new(CastRay_result1_12_upvr.Position) * Angles(0, math.random(-360, 360))
+					local clone_33 = VFX_upvr_2.Shockwave:Clone()
+					clone_33.Material = "SmoothPlastic"
+					clone_33.Color = Color3.new(0.75, 0.75, 0.75)
+					clone_33.Size = var2179
+					clone_33.CFrame = var2181 * CFrame.new(0, var2179.Y / 4, 0)
+					clone_33.Parent = Folder_4_upvr
+					clone_33.Transparency = -1
+					local var2183 = 0.35 * math.random(8, 12) / 10
+					game.Debris:AddItem(clone_33, var2183)
+					Tween(clone_33, {
+						Size = var2180;
+						CFrame = var2181 * CFrame.new(0, var2180.Y / 4 - 2, 0) * Angles(0, math.random(-35, 35));
+						Transparency = 1;
+					}, var2183, "Sine", "Out", false)
+					task.wait((1/60))
+				end
+			end))
+			coroutine.resume(coroutine.create(function() -- Line 2439
+				--[[ Upvalues[1]:
+					[1]: CastRay_result1_12_upvr (readonly)
+				]]
+				for _ = 1, 6 do
+					Sphere({
+						CFrame = CFrame.new(CastRay_result1_12_upvr.Position);
+						Size = Vector3.new(10, 1, 10);
+						Color = Color3.new(math.random(), 0, 0);
+						EndCFrameR = CFrame.new();
+						EndSize = Vector3.new(75, 0.25, 75);
+						Style = "Sine";
+						Direction = "Out";
+						Speed = 0.5;
+						Transparency = -0.25;
+					})
+					task.wait(0.075)
+					for _ = 1, 3 do
+						Sphere({
+							CFrame = CFrame.new(CastRay_result1_12_upvr.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(5, 35)) * Angles(math.random(-35, -15)) * CFrame.new(0, -2.5, 0);
+							EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(15, 35), 0) * Angles(math.random(0, 5));
+							Size = Vector3.new(0.5, 2, 0.5);
+							Speed = math.random(7, 12) / 10;
+							EndSize = Vector3.new(0.25, 10, 0.25);
+							Style = "Sine";
+							Direction = "Out";
+							Color = Color3.new(math.random(), 0, 0);
+							EndColor = Color3.new(math.random(), 0, 0);
+						})
+						local randint_6 = math.random(7, 12)
+						Slash({
+							Speed = 0.25 * math.random(85, 115) / 100;
+							Direction = "Out";
+							Size = Vector3.new(1, 1, 1);
+							Color = Color3.new(math.random(), 0, 0);
+							EndSize = Vector3.new(randint_6 * 10, 2, randint_6 * 10);
+							CFrame = CFrame.new(CastRay_result1_12_upvr.Position) * Angles(0, math.random(-360, 360)) * RandomRotation(-15, 15);
+							EndCFrameR = RandomRotation(-25, 25);
+						})
+					end
+				end
+			end))
+			for i_60 = 1, 5 do
+				local var2192 = (i_60 - 1) / 2 + 1
+				local tbl_131 = {
+					CFrame = CFrame.new(CastRay_result1_12_upvr.Position, CastRay_result1_12_upvr.Position + CastRay_result1_12_upvr.Normal);
+					Radius = 10 * i_60;
+					Size = Vector3.new(8 * var2192, 1 + var2192, 4 * var2192);
+					Quality = 20;
+				}
+				local Material_8 = CastRay_result1_12_upvr.Instance.Material
+				if not Material_8 then
+					Material_8 = Enum.Material.Mud
+				end
+				tbl_131.Material = Material_8
+				tbl_131.Color = CastRay_result1_12_upvr.Instance.Color
+				tbl_131.Angle = {-25, -5}
+				tbl_131.Animation = {
+					Speed = (0.125 + (i_60 - 1) / 4 * 0.125) / 2;
+				}
+				tbl_131.Chance = 35
+				tbl_131.Depth = 1.25 + (var2192 - 1) / 2
+				function tbl_131.Callback(arg1) -- Line 2494
+					--[[ Upvalues[1]:
+						[1]: var1409_upvw (copied, read and write)
+					]]
+					arg1.Size *= Vector3.new(math.random(25, 100) / 100, 1, 1)
+					if math.random(1, 4) == 1 then
+						local clone_35 = var1409_upvw.CorruptionVFX:Clone()
+						clone_35.Parent = arg1
+						clone_35.Rate *= 5
+						clone_35.Enabled = true
+						game.Debris:AddItem(clone_35, math.random(30, 50) / 10)
+					end
+				end
+				Crater(tbl_131)
+			end
+			for _ = 1, math.random(8, 11) do
+				local var2198 = HumanoidRootPart_4_upvr.Position + Vector3.new(0, 5, 0) + (Orientation(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(10, 35))).p
+				local CastRay_result1_17 = CastRay(var2198, var2198 - Vector3.new(0, 1, 0), 15, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+				if Validate(CastRay_result1_17) then
+					local tbl_104 = {
+						CFrame = CFrame.new(CastRay_result1_17.Position) * RandomRotation(-360, 360);
+						Velocity = (Angles(90) * RandomRotation(-30, 30)).lookVector * math.random(200, 250);
+						RotVelocity = RandomOrientation(-2, 2);
+						Size = Vector3.new(1, 1, 1) * math.random(4, 10);
+					}
+					local Material = CastRay_result1_17.Instance.Material
+					if not Material then
+						Material = Enum.Material.Mud
+					end
+					tbl_104.Material = Material
+					tbl_104.Color = CastRay_result1_17.Instance.Color
+					if math.random(1, 2) == 1 then
+						local clone_7 = var1409_upvw.CorruptionVFX:Clone()
+						clone_7.Rate *= 25
+						clone_7.Parent = Debree(tbl_104)
+						clone_7.Enabled = true
+					end
+					for _ = 1, 2 do
+						local tbl_192 = {
+							CFrame = CFrame.new(CastRay_result1_17.Position) * RandomRotation(-360, 360);
+							Velocity = (Angles(90) * RandomRotation(-60, 60)).lookVector * math.random(50, 150);
+							RotVelocity = RandomOrientation(-4, 4);
+							Size = Vector3.new(1, 1, 1) * math.random(5, 20) / 10;
+						}
+						local Material_3 = CastRay_result1_17.Instance.Material
+						if not Material_3 then
+							Material_3 = Enum.Material.Mud
+						end
+						tbl_192.Material = Material_3
+						tbl_192.Color = CastRay_result1_17.Instance.Color
+						tbl_192.Solid = true
+					end
+				end
+				if Validate(CastRay_result1_17) then
+					local var2206 = HumanoidRootPart_4_upvr.Position + Vector3.new(0, 5, 0) + (Orientation(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(5, 25))).p
+					local CastRay_result1_3 = CastRay(var2206, var2206 - Vector3.new(0, 1, 0), 15, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+					local tbl_190 = {
+						CFrame = CFrame.new(CastRay_result1_3.Position) * RandomRotation(-360, 360);
+						Velocity = (Angles(90) * RandomRotation(-10, 10)).lookVector * math.random(35, 65);
+						RotVelocity = RandomOrientation(-2, 2);
+						Size = Vector3.new(1, 1, 1) * math.random(10, 20) / 10;
+					}
+					local Material_2 = CastRay_result1_3.Instance.Material
+					if not Material_2 then
+						Material_2 = Enum.Material.Mud
+					end
+					tbl_190.Material = Material_2
+					tbl_190.Color = CastRay_result1_3.Instance.Color
+					tbl_190.Solid = true
+				end
+			end
+		end
+	end))
+	tbl_225_upvr.DataDump:Play({
+		Ignore = {"RootJoint", "Neck", "RW", "LW", "RH", "LH", "Sword"};
+		Handler = var1973_upvr;
+	})
+	FullOverride()
+	BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 2309
+		--[[ Upvalues[9]:
+			[1]: var2151_upvw (read and write)
+			[2]: CFrameValue_upvr_10 (copied, readonly)
+			[3]: cframe_upvr (copied, readonly)
+			[4]: CFrameValue_upvr (copied, readonly)
+			[5]: CFrameValue_upvr_8 (copied, readonly)
+			[6]: CFrameValue_upvr_3 (copied, readonly)
+			[7]: CFrameValue_upvr_12 (copied, readonly)
+			[8]: CFrameValue_upvr_11 (copied, readonly)
+			[9]: any_upvr_5 (copied, readonly)
+		]]
+		var2151_upvw = math.min(1, var2151_upvw + arg1 * 1.5)
+		PlayAnimation({
+			RootJoint = CFrameValue_upvr_10.Value;
+			Neck = cframe_upvr * CFrameValue_upvr.Value;
+			RW = CFrameValue_upvr_8.Value;
+			LW = CFrameValue_upvr_3.Value;
+			RH = CFrameValue_upvr_12.Value;
+			LH = CFrameValue_upvr_11.Value;
+			Sword = any_upvr_5.Value;
+		}, var2151_upvw * 1, {
+			NeckFix = false;
+		})
+	end):Disconnect()
+	FadeAnim(0, 0.5, "Sine", "Out")
+	var1451_upvw = false
+end
+function Forbidden() -- Line 2564
+	--[[ Upvalues[17]:
+		[1]: var1451_upvw (read and write)
+		[2]: class_Humanoid_upvr_2 (readonly)
+		[3]: BindableEvent_upvr_2 (readonly)
+		[4]: CFrameValue_upvr_10 (readonly)
+		[5]: cframe_upvr (readonly)
+		[6]: CFrameValue_upvr (readonly)
+		[7]: CFrameValue_upvr_8 (readonly)
+		[8]: CFrameValue_upvr_3 (readonly)
+		[9]: CFrameValue_upvr_12 (readonly)
+		[10]: CFrameValue_upvr_11 (readonly)
+		[11]: any_upvr_5 (readonly)
+		[12]: var1973_upvr (readonly)
+		[13]: tbl_15_upvr (readonly)
+		[14]: HumanoidRootPart_4_upvr (readonly)
+		[15]: Value_5_upvr (readonly)
+		[16]: Folder_4_upvr (readonly)
+		[17]: tbl_225_upvr (readonly)
+	]]
+	var1451_upvw = true
+	class_Humanoid_upvr_2.WalkSpeed = 1
+	local var2212_upvw = 0
+	SetPose()
+	Sound({
+		Id = tbl_15_upvr.Whooshing;
+		Volume = 1.75;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		Pitch = 1;
+		EmitterSize = 10;
+	}, {
+		Temporary = true;
+	})
+	coroutine.resume(coroutine.create(function() -- Line 2592
+		--[[ Upvalues[4]:
+			[1]: tbl_15_upvr (copied, readonly)
+			[2]: HumanoidRootPart_4_upvr (copied, readonly)
+			[3]: Value_5_upvr (copied, readonly)
+			[4]: Folder_4_upvr (copied, readonly)
+		]]
+		task.wait(0.475)
+		Sound({
+			Id = tbl_15_upvr.Stab;
+			Volume = 1;
+			Parent = HumanoidRootPart_4_upvr;
+			Playing = true;
+			Pitch = 1;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		Sound({
+			Id = tbl_15_upvr.StabHit;
+			Volume = 1;
+			Parent = HumanoidRootPart_4_upvr;
+			Playing = true;
+			Pitch = 1.2;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		Sound({
+			Id = tbl_15_upvr.SwordSlash;
+			Volume = 1;
+			Parent = HumanoidRootPart_4_upvr;
+			Playing = true;
+			TimePosition = 0.15;
+			Pitch = 0.8;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		Sound({
+			Id = tbl_15_upvr.Impact;
+			Volume = 1;
+			Parent = HumanoidRootPart_4_upvr;
+			Playing = true;
+			Pitch = 1;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		Sound({
+			Id = tbl_15_upvr.Impact2;
+			Volume = 1.5;
+			Parent = HumanoidRootPart_4_upvr;
+			Playing = true;
+			Pitch = 1;
+			EmitterSize = 10;
+		}, {
+			Temporary = true;
+		})
+		local var2231_upvw = true
+		coroutine.resume(coroutine.create(function() -- Line 2637
+			--[[ Upvalues[4]:
+				[1]: HumanoidRootPart_4_upvr (copied, readonly)
+				[2]: Value_5_upvr (copied, readonly)
+				[3]: var2231_upvw (read and write)
+				[4]: tbl_15_upvr (copied, readonly)
+			]]
+			local p = (HumanoidRootPart_4_upvr.CFrame * CFrame.new(0.25, 0, -3.5)).p
+			local CastRay_result1_13 = CastRay(p, p - Vector3.new(0, 1, 0), 5, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+			local var2241
+			if var2241 then
+				var2241 = 6
+				for _ = 1, var2241 do
+					Sphere({
+						CFrame = CFrame.new(CastRay_result1_13.Position);
+						Size = Vector3.new(0.5, 0.25, 0.5) * math.random(50, 100) / 100;
+						Color = Color3.new(math.random(), 0, 0);
+						EndCFrameR = CFrame.new();
+						EndSize = Vector3.new(5.5, 0.125, 5.5) * math.random(50, 100) / 100;
+						Style = "Sine";
+						Direction = "Out";
+						Speed = 0.25;
+						Transparency = -0.25;
+					})
+					local var2243 = math.random(1, 2) * 5.5
+					Slash({
+						Speed = 0.35 * math.random(75, 115) / 100;
+						Direction = "Out";
+						Size = Vector3.new(0.5, 0.5, 0.5);
+						Color = Color3.new(math.random(), 0, 0);
+						EndSize = Vector3.new(var2243, 2, var2243);
+						CFrame = CFrame.new(CastRay_result1_13.Position) * Angles(0, math.random(-360, 360)) * RandomRotation(-15, 15);
+						EndCFrameR = RandomRotation(-35, 35);
+					})
+					for _ = 1, 2 do
+						Sphere({
+							CFrame = CFrame.new(CastRay_result1_13.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, 550) / 200) * Angles(math.random(-35, -15)) * CFrame.new(0, -1, 0);
+							EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5));
+							Size = Vector3.new(0.125, 1, 0.125);
+							Speed = math.random(3, 6) / 10;
+							EndSize = Vector3.new(0.10000, 2.5, 0.10000);
+							Style = "Sine";
+							Direction = "Out";
+							Color = Color3.new(math.random(), 0, 0);
+							EndColor = Color3.new(math.random(), 0, 0);
+						})
+					end
+				end
+			end
+			var2241 = 0
+			repeat
+				var2241 += task.wait((1/60)) * 2
+				local p_8 = (HumanoidRootPart_4_upvr.CFrame * CFrame.new(0.25, 0, -3.5)).p
+				local CastRay_result1_8 = CastRay(p_8, p_8 - Vector3.new(0, 1, 0), 5, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+				if Validate(CastRay_result1_8) then
+					local var2249 = var2241 * 3 + 2.5
+					Sphere({
+						CFrame = CFrame.new(CastRay_result1_8.Position);
+						Size = Vector3.new(0.5, 0.25, 0.5);
+						Color = Color3.new(math.random(), 0, 0);
+						EndCFrameR = CFrame.new();
+						EndSize = Vector3.new(var2249, 0.125, var2249);
+						Style = "Sine";
+						Direction = "Out";
+						Speed = 0.25;
+						Transparency = -0.25;
+					})
+					Sphere({
+						CFrame = CFrame.new(CastRay_result1_8.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, var2249 * 100) / 200) * Angles(math.random(-35, -15)) * CFrame.new(0, -1, 0);
+						EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5));
+						Size = Vector3.new(0.125, 1, 0.125);
+						Speed = math.random(3, 6) / 10;
+						EndSize = Vector3.new(0.10000, 2.5, 0.10000);
+						Style = "Sine";
+						Direction = "Out";
+						Color = Color3.new(math.random(), 0, 0);
+						EndColor = Color3.new(math.random(), 0, 0);
+					})
+					local randint_3 = math.random(-35, -15)
+					local tbl_142 = {}
+					if math.random(1, 2) == 1 then
+						randint_3 = "Sphere"
+					else
+						randint_3 = "Pixel"
+					end
+					tbl_142.Type = randint_3
+					tbl_142.CFrame = CFrame.new(CastRay_result1_8.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, var2249 * 100) / 200) * Angles(randint_3) * CFrame.new(0, -1, 0)
+					tbl_142.EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5))
+					tbl_142.Size = Vector3.new(0.34999, 0.34999, 0.34999) * math.random(1, 2)
+					tbl_142.Speed = math.random(3, 6) / 10
+					tbl_142.EndSize = Vector3.new(0.10000, 0.10000, 0.10000)
+					tbl_142.Style = "Sine"
+					tbl_142.Direction = "Out"
+					tbl_142.Color = Color3.new(math.random(), 0, 0)
+					tbl_142.EndColor = Color3.new(math.random(), 0, 0)
+					Sphere(tbl_142)
+					local var2254 = math.random(1, 2) * var2249
+					Slash({
+						Speed = 0.25 * math.random(85, 115) / 100;
+						Direction = "Out";
+						Size = Vector3.new(0.5, 0.5, 0.5);
+						Color = Color3.new(math.random(), 0, 0);
+						EndSize = Vector3.new(var2254, 2, var2254);
+						CFrame = CFrame.new(CastRay_result1_8.Position) * Angles(0, math.random(-360, 360)) * RandomRotation(-15, 15);
+						EndCFrameR = RandomRotation(-25, 25);
+					})
+					if math.random(1, 2) == 1 then
+						Sphere({
+							Type = "Pixel";
+							CFrame = CFrame.new(CastRay_result1_8.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, var2249 * 100) / 200) * Angles(math.random(-35, -15)) * CFrame.new(0, -1, 0);
+							EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5));
+							Size = Vector3.new(0.34999, 0.34999, 0.34999) * math.random(1, 2);
+							Speed = math.random(3, 6) / 10;
+							EndSize = Vector3.new(0.10000, 0.10000, 0.10000);
+							Style = "Sine";
+							Direction = "Out";
+							Color = CastRay_result1_8.Instance.Color;
+							Material = CastRay_result1_8.Instance.Material;
+						})
+					end
+				end
+			until var2231_upvw == false
+			Sound({
+				Id = tbl_15_upvr.Impact2;
+				Volume = 1.5;
+				Parent = HumanoidRootPart_4_upvr;
+				Playing = true;
+				Pitch = 1;
+				EmitterSize = 10;
+			}, {
+				Temporary = true;
+			})
+			Sound({
+				Id = tbl_15_upvr.StabHit;
+				Volume = 1;
+				Parent = HumanoidRootPart_4_upvr;
+				Playing = true;
+				Pitch = 1.2;
+				EmitterSize = 10;
+			}, {
+				Temporary = true;
+			})
+			local p_3 = (HumanoidRootPart_4_upvr.CFrame * CFrame.new(0.25, 0, -3.5)).p
+			local CastRay_result1_15 = CastRay(p_3, p_3 - Vector3.new(0, 1, 0), 5, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+			if Validate(CastRay_result1_15) then
+				for _ = 1, 20 do
+					local var2264 = math.random(5, 20) / 10
+					local var2265 = var2241 * 3 * 2 + 2.5
+					Sphere({
+						CFrame = CFrame.new(CastRay_result1_15.Position);
+						Size = Vector3.new(0.5, 0.25, 0.5);
+						Color = Color3.new(math.random(), 0, 0);
+						EndCFrameR = CFrame.new();
+						EndSize = Vector3.new(var2265, 0.125, var2265);
+						Style = "Sine";
+						Direction = "Out";
+						Speed = 0.25 * var2264;
+						Transparency = -0.25;
+					})
+					Sphere({
+						CFrame = CFrame.new(CastRay_result1_15.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, var2265 * 100) / 200) * Angles(math.random(-35, -15)) * CFrame.new(0, -1, 0);
+						EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5));
+						Size = Vector3.new(0.125, 1, 0.125);
+						Speed = math.random(3, 6) / 10 * var2264;
+						EndSize = Vector3.new(0.10000, 2.5, 0.10000);
+						Style = "Sine";
+						Direction = "Out";
+						Color = Color3.new(math.random(), 0, 0);
+						EndColor = Color3.new(math.random(), 0, 0);
+					})
+					local randint_2 = math.random(-35, -15)
+					local tbl_4 = {}
+					if math.random(1, 2) == 1 then
+						randint_2 = "Sphere"
+					else
+						randint_2 = "Pixel"
+					end
+					tbl_4.Type = randint_2
+					tbl_4.CFrame = CFrame.new(CastRay_result1_15.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, var2265 * 100) / 200) * Angles(randint_2) * CFrame.new(0, -1, 0)
+					tbl_4.EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5))
+					tbl_4.Size = Vector3.new(0.34999, 0.34999, 0.34999) * math.random(1, 2)
+					tbl_4.Speed = math.random(3, 6) / 10 * var2264
+					tbl_4.EndSize = Vector3.new(0.10000, 0.10000, 0.10000)
+					tbl_4.Style = "Sine"
+					tbl_4.Direction = "Out"
+					tbl_4.Color = Color3.new(math.random(), 0, 0)
+					tbl_4.EndColor = Color3.new(math.random(), 0, 0)
+					Sphere(tbl_4)
+					local var2270 = math.random(1, 2) * var2265
+					Slash({
+						Speed = 0.25 * math.random(85, 115) / 100 * var2264;
+						Direction = "Out";
+						Size = Vector3.new(0.5, 0.5, 0.5);
+						Color = Color3.new(math.random(), 0, 0);
+						EndSize = Vector3.new(var2270, 2, var2270);
+						CFrame = CFrame.new(CastRay_result1_15.Position) * Angles(0, math.random(-360, 360)) * RandomRotation(-15, 15);
+						EndCFrameR = RandomRotation(-25, 25);
+					})
+					if math.random(1, 2) == 1 then
+						Sphere({
+							Type = "Pixel";
+							CFrame = CFrame.new(CastRay_result1_15.Position) * Angles(0, math.random(-360, 360)) * CFrame.new(0, 0, -math.random(0, var2265 * 100) / 200) * Angles(math.random(-35, -15)) * CFrame.new(0, -1, 0);
+							EndCFrameR = Angles(math.random(5, 10)) * CFrame.new(0, math.random(2, 10), 0) * Angles(math.random(0, 5));
+							Size = Vector3.new(0.34999, 0.34999, 0.34999) * math.random(1, 2);
+							Speed = math.random(3, 6) / 10 * var2264;
+							EndSize = Vector3.new(0.10000, 0.10000, 0.10000);
+							Style = "Sine";
+							Direction = "Out";
+							Color = CastRay_result1_15.Instance.Color;
+							Material = CastRay_result1_15.Instance.Material;
+						})
+					end
+					task.wait((1/60))
+				end
+			end
+		end))
+		task.wait(0.6250000000000001)
+		var2231_upvw = false
+		local nb_result1_16 = nb(Folder_4_upvr)
+		nb_result1_16.CFrame = HumanoidRootPart_4_upvr.CFrame
+		nb_result1_16.Transparency = 1
+		nb_result1_16.Size = Vector3.new(0, 0, 0)
+		game.Debris:AddItem(nb_result1_16, 5)
+		Sound({
+			Id = tbl_15_upvr.AccessDenied;
+			Volume = 3;
+			Parent = nb_result1_16;
+			Playing = true;
+			Pitch = 1;
+			EmitterSize = 35;
+		})
+	end))
+	tbl_225_upvr.Forbidden:Play({
+		Ignore = {"RootJoint", "Neck", "RW", "LW", "RH", "LH", "Sword"};
+		Handler = var1973_upvr;
+	})
+	FullOverride()
+	BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 2570
+		--[[ Upvalues[9]:
+			[1]: var2212_upvw (read and write)
+			[2]: CFrameValue_upvr_10 (copied, readonly)
+			[3]: cframe_upvr (copied, readonly)
+			[4]: CFrameValue_upvr (copied, readonly)
+			[5]: CFrameValue_upvr_8 (copied, readonly)
+			[6]: CFrameValue_upvr_3 (copied, readonly)
+			[7]: CFrameValue_upvr_12 (copied, readonly)
+			[8]: CFrameValue_upvr_11 (copied, readonly)
+			[9]: any_upvr_5 (copied, readonly)
+		]]
+		var2212_upvw = math.min(1, var2212_upvw + arg1 * 3)
+		PlayAnimation({
+			RootJoint = CFrameValue_upvr_10.Value;
+			Neck = cframe_upvr * CFrameValue_upvr.Value;
+			RW = CFrameValue_upvr_8.Value;
+			LW = CFrameValue_upvr_3.Value;
+			RH = CFrameValue_upvr_12.Value;
+			LH = CFrameValue_upvr_11.Value;
+			Sword = any_upvr_5.Value;
+		}, var2212_upvw * 1, {
+			NeckFix = false;
+		})
+	end):Disconnect()
+	FadeAnim(0, 0.5, "Sine", "Out")
+	var1451_upvw = false
+end
+function EquipSword(arg1) -- Line 2876
+	--[[ Upvalues[5]:
+		[1]: var1452_upvw (read and write)
+		[2]: Blade_upvr (readonly)
+		[3]: tbl_15_upvr (readonly)
+		[4]: HumanoidRootPart_4_upvr (readonly)
+		[5]: Torso_3_upvr (readonly)
+	]]
+	var1452_upvw = arg1
+	if var1452_upvw == true then
+		Blade_upvr.Blade.Transparency = 0
+		Blade_upvr.Number.Enabled = true
+	else
+		Blade_upvr.Blade.Transparency = 1
+		Blade_upvr.Number.Enabled = false
+	end
+	local CorruptionVFX_upvr = Blade_upvr.CorruptionVFX
+	CorruptionVFX_upvr.Enabled = true
+	coroutine.resume(coroutine.create(function() -- Line 2888
+		--[[ Upvalues[1]:
+			[1]: CorruptionVFX_upvr (readonly)
+		]]
+		task.wait((1/60))
+		CorruptionVFX_upvr:Emit(10)
+		task.wait(0.5)
+		CorruptionVFX_upvr.Enabled = false
+	end))
+	Sound({
+		Id = tbl_15_upvr.Glitch1;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		EmitterSize = 30;
+		Volume = 0.75;
+		Pitch = 0.9;
+		PlaybackRegionsEnabled = true;
+		PlaybackRegion = NumberRange.new(0, 0.7);
+	}, {
+		Temporary = true;
+	})
+	Sound({
+		Id = tbl_15_upvr.Glitch1;
+		Parent = HumanoidRootPart_4_upvr;
+		Playing = true;
+		EmitterSize = 30;
+		Volume = 0.75;
+		Pitch = 1.1;
+		PlaybackRegionsEnabled = true;
+		PlaybackRegion = NumberRange.new(0, 0.7);
+	}, {
+		Temporary = true;
+	})
+	local Sound_result1_upvr_2 = Sound({
+		Id = 1588058260;
+		Parent = Torso_3_upvr;
+		Volume = 0.75;
+		EmitterSize = 14;
+	})
+	coroutine.resume(coroutine.create(function() -- Line 2922
+		--[[ Upvalues[1]:
+			[1]: Sound_result1_upvr_2 (readonly)
+		]]
+		Sound_result1_upvr_2:Resume()
+		for _ = 1, math.random(7, 15) do
+			Sound_result1_upvr_2.Pitch = math.random(60, 300) / 100
+			task.wait((1/60))
+		end
+		Sound_result1_upvr_2:Destroy()
+	end))
+end
+function Dance() -- Line 2933
+	--[[ Upvalues[20]:
+		[1]: var1451_upvw (read and write)
+		[2]: var1453_upvw (read and write)
+		[3]: var1409_upvw (read and write)
+		[4]: Folder_4_upvr (readonly)
+		[5]: HumanoidRootPart_4_upvr (readonly)
+		[6]: Sound_2_upvr (readonly)
+		[7]: var1447_upvw (read and write)
+		[8]: var1444_upvw (read and write)
+		[9]: class_Humanoid_upvr_2 (readonly)
+		[10]: Value_5_upvr (readonly)
+		[11]: BindableEvent_upvr_2 (readonly)
+		[12]: CFrameValue_upvr_10 (readonly)
+		[13]: cframe_upvr (readonly)
+		[14]: CFrameValue_upvr (readonly)
+		[15]: CFrameValue_upvr_8 (readonly)
+		[16]: CFrameValue_upvr_3 (readonly)
+		[17]: CFrameValue_upvr_12 (readonly)
+		[18]: CFrameValue_upvr_11 (readonly)
+		[19]: tbl_225_upvr (readonly)
+		[20]: var1973_upvr (readonly)
+	]]
+	var1451_upvw = true
+	var1453_upvw = true
+	local clone_46 = var1409_upvw.BeamEffect:Clone()
+	clone_46.Parent = Folder_4_upvr
+	local Weld_3 = Instance.new("Weld", clone_46)
+	Weld_3.Part0 = HumanoidRootPart_4_upvr
+	Weld_3.Part1 = clone_46
+	local Color3_fromRGB_result1_upvw_3 = Color3.fromRGB(255, 0, 0)
+	local tbl_108_upvr = {}
+	for _, v_42 in pairs(clone_46:GetDescendants()) do
+		if v_42:IsA("ParticleEmitter") then
+			local Value_4 = v_42.Color.Keypoints[1].Value
+			local var2299 = 0.299 * Value_4.R + 0.587 * Value_4.G + 0.114 * Value_4.B
+			v_42.Color = ColorSequence.new(Color3.new(Color3_fromRGB_result1_upvw_3.R * var2299, Color3_fromRGB_result1_upvw_3.G * var2299, Color3_fromRGB_result1_upvw_3.B * var2299))
+			v_42.Enabled = true
+			tbl_108_upvr[v_42] = var2299
+		elseif v_42:IsA("PointLight") then
+			local Color_3 = v_42.Color
+			local var2301 = 0.299 * Color_3.R + 0.587 * Color_3.G + 0.114 * Color_3.B
+			v_42.Color = Color3.new(Color3_fromRGB_result1_upvw_3.R * var2301, Color3_fromRGB_result1_upvw_3.G * var2301, Color3_fromRGB_result1_upvw_3.B * var2301)
+			v_42.Enabled = true
+			tbl_108_upvr[v_42] = var2301
+		end
+	end
+	var1447_upvw = 102334374209639
+	Sound_2_upvr.TimePosition = 0
+	Sound_2_upvr.SoundId = "rbxassetid://"..var1447_upvw
+	var1444_upvw = 1
+	class_Humanoid_upvr_2.WalkSpeed = 5
+	local var2302_upvw = true
+	local tbl_183 = {}
+	for _, v_43 in pairs(workspace:children()) do
+		local HumanoidRootPart = v_43:FindFirstChild("HumanoidRootPart")
+		if v_43:IsA("Model") and v_43:GetAttribute("S_Local") == "John Doe" and HumanoidRootPart ~= nil and v_43 ~= Value_5_upvr and (HumanoidRootPart.Position - HumanoidRootPart_4_upvr.Position).magnitude <= 20 then
+			local Music_2 = HumanoidRootPart:FindFirstChild("Music")
+			if Music_2 and Music_2.SoundId == "rbxassetid://"..var1447_upvw then
+				table.insert(tbl_183, Music_2)
+			end
+		end
+	end
+	table.sort(tbl_183, function(arg1, arg2) -- Line 2979
+		local var2310
+		if arg2.TimePosition >= arg1.TimePosition then
+			var2310 = false
+		else
+			var2310 = true
+		end
+		return var2310
+	end)
+	if tbl_183[1] then
+		Sound_2_upvr.TimePosition = tbl_183[1].TimePosition
+	end
+	SetPose()
+	local var2312_upvw = 0
+	coroutine.resume(coroutine.create(function() -- Line 3001
+		--[[ Upvalues[5]:
+			[1]: Color3_fromRGB_result1_upvw_3 (read and write)
+			[2]: tbl_108_upvr (readonly)
+			[3]: var1453_upvw (copied, read and write)
+			[4]: var2302_upvw (read and write)
+			[5]: tbl_225_upvr (copied, readonly)
+		]]
+		repeat
+			Color3_fromRGB_result1_upvw_3 = Color3.fromRGB(255, 0, 0):Lerp(Color3.fromRGB(150, 0, 0), math.sin(0 + task.wait((1/60))))
+			for i_69, v_44 in pairs(tbl_108_upvr) do
+				if i_69:IsA("PointLight") then
+					i_69.Color = Color3.new(Color3_fromRGB_result1_upvw_3.R * v_44, Color3_fromRGB_result1_upvw_3.G * v_44, Color3_fromRGB_result1_upvw_3.B * v_44)
+				else
+					-- KONSTANTERROR: Expression was reused, decompilation is incorrect
+					i_69.Color = ColorSequence.new(Color3.new(Color3_fromRGB_result1_upvw_3.R * v_44, Color3_fromRGB_result1_upvw_3.G * v_44, Color3_fromRGB_result1_upvw_3.B * v_44))
+				end
+			end
+		until var1453_upvw == false
+		var2302_upvw = false
+		tbl_225_upvr.Dance:Stop()
+	end))
+	repeat
+		if var2302_upvw == true then
+			tbl_225_upvr.Dance:Stop()
+			tbl_225_upvr.Dance:Play({
+				Ignore = {"RootJoint", "Neck", "RW", "LW", "RH", "LH"};
+				Handler = var1973_upvr;
+			})
+		end
+		task.wait((1/60))
+	until var2302_upvw == false
+	for i_70, _ in pairs(tbl_108_upvr) do
+		i_70.Enabled = false
+	end
+	game.Debris:AddItem(clone_46, 2)
+	FullOverride()
+	BindableEvent_upvr_2.Event:Connect(function(arg1) -- Line 2988
+		--[[ Upvalues[8]:
+			[1]: var2312_upvw (read and write)
+			[2]: CFrameValue_upvr_10 (copied, readonly)
+			[3]: cframe_upvr (copied, readonly)
+			[4]: CFrameValue_upvr (copied, readonly)
+			[5]: CFrameValue_upvr_8 (copied, readonly)
+			[6]: CFrameValue_upvr_3 (copied, readonly)
+			[7]: CFrameValue_upvr_12 (copied, readonly)
+			[8]: CFrameValue_upvr_11 (copied, readonly)
+		]]
+		var2312_upvw = math.min(1, var2312_upvw + arg1 * 3)
+		PlayAnimation({
+			RootJoint = CFrameValue_upvr_10.Value;
+			Neck = cframe_upvr * CFrameValue_upvr.Value;
+			RW = CFrameValue_upvr_8.Value;
+			LW = CFrameValue_upvr_3.Value;
+			RH = CFrameValue_upvr_12.Value;
+			LH = CFrameValue_upvr_11.Value;
+		}, var2312_upvw, {
+			NeckFix = false;
+		})
+	end):Disconnect()
+	var2302_upvw = false
+	var1444_upvw = 2
+	var1447_upvw = var1447_upvw
+	Sound_2_upvr.TimePosition = Sound_2_upvr.TimePosition
+	FadeAnim(0.25, 0.5, "Sine", "Out")
+	var1451_upvw = false
+end
+function GetValue(arg1) -- Line 3046
+	--[[ Upvalues[1]:
+		[1]: Value_5_upvr (readonly)
+	]]
+	local attribute = Value_5_upvr:GetAttribute(arg1)
+	if attribute == nil then
+		repeat
+			task.wait((1/60))
+			attribute = Value_5_upvr:GetAttribute(arg1)
+		until attribute ~= nil
+	end
+	return attribute
+end
+coroutine.resume(coroutine.create(function() -- Line 3057
+	--[[ Upvalues[3]:
+		[1]: var1446_upvw (read and write)
+		[2]: var1452_upvw (read and write)
+		[3]: var1453_upvw (read and write)
+	]]
+	local GetValue_result1_2 = GetValue("SwordEquipped")
+	if GetValue("Muted") then
+		var1446_upvw = 0
+	end
+	if var1452_upvw ~= GetValue_result1_2 then
+		EquipSword(GetValue_result1_2)
+	end
+	if var1453_upvw ~= GetValue("Dancing") then
+		if var1453_upvw == false then
+			Dance()
+			return
+		end
+		var1453_upvw = false
+	end
+end))
+Value_5_upvr:WaitForChild("Projectiles").ChildAdded:Connect(function(arg1) -- Line 3079
+	--[[ Upvalues[4]:
+		[1]: tbl_15_upvr (readonly)
+		[2]: RunService_upvr (readonly)
+		[3]: Value_5_upvr (readonly)
+		[4]: Folder_4_upvr (readonly)
+	]]
+	-- KONSTANTWARNING: Variable analysis failed. Output will have some incorrect variable assignments
+	if arg1.Name == "StackOverflow" then
+		MakeOrb(arg1, true)
+		local tbl_84 = {
+			Id = tbl_15_upvr.StackOverflow;
+			Playing = true;
+			Volume = 1;
+			Pitch = math.random(9, 11) / 10;
+		}
+		tbl_84.Parent = arg1
+		Sound(tbl_84)
+		coroutine.resume(coroutine.create(function() -- Line 3091
+			--[[ Upvalues[3]:
+				[1]: arg1 (readonly)
+				[2]: RunService_upvr (copied, readonly)
+				[3]: Value_5_upvr (copied, readonly)
+			]]
+			repeat
+				local any_Wait_result1_2 = RunService_upvr.Heartbeat:Wait()
+				local var2346 = 4 - any_Wait_result1_2
+				arg1.CFrame = CFrame.new(arg1.Position, arg1.Position + arg1:GetAttribute("Dir"))
+				local var2347 = arg1.Position + arg1.CFrame.LookVector * arg1:GetAttribute("Speed") * any_Wait_result1_2
+				local CastRay_result1_14 = CastRay(arg1.Position, var2347, (arg1.Position - var2347).magnitude + 0.05, {Value_5_upvr}, Enum.RaycastFilterType.Exclude)
+				if CastRay_result1_14.Instance == nil then
+					arg1.Position = var2347
+				else
+					arg1.Position = CastRay_result1_14.Position
+					var2346 = -100
+				end
+			until var2346 <= 0 and arg1.Name == "Destroyed"
+			for _, v_46 in pairs(arg1:GetDescendants()) do
+				if v_46:IsA("ParticleEmitter") then
+					v_46.Enabled = false
+				end
+			end
+		end))
+	elseif arg1.Name == "FracturedData" then
+		repeat
+			local var2353 = math.random(85, 115) / 100
+			Sphere({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Color = Color3.new(math.random(), 0, 0);
+				EndSize = Vector3.new(0, 0, 0);
+				CFrame = arg1.CFrame;
+				Size = Vector3.new(1.5, 1.5, 1.5);
+				EndCFrameR = CFrame.new();
+			})
+			Slash({
+				Speed = 0.25 * math.random(85, 115) / 100;
+				Direction = "Out";
+				Size = Vector3.new(1, 1, 1);
+				Color = Color3.new(math.random(), 0, 0);
+				EndSize = Vector3.new(var2353 * 10, 2, var2353 * 10);
+				CFrame = arg1.CFrame * RandomRotation(-360, 360);
+			})
+		until arg1 == nil and arg1.Parent == nil and arg1.Name ~= "FracturedData"
+		local nb_result1_15 = nb(Folder_4_upvr)
+		nb_result1_15.Transparency = 1
+		nb_result1_15.Size = Vector3.new(0, 0, 0)
+		nb_result1_15.CFrame = arg1.CFrame
+		game.Debris:AddItem(nb_result1_15, 10)
+		for _, v_49 in pairs({tbl_15_upvr.Lightning1, tbl_15_upvr.Lightning4, tbl_15_upvr.Laser2, tbl_15_upvr.Laser1}) do
+			Sound({
+				Id = v_49;
+				Pitch = math.random(90, 110) / 100;
+				Parent = nb_result1_15;
+				Playing = true;
+				EmitterSize = 30;
+				Volume = 1;
+			}, {
+				Temporary = true;
+			})
+			local _
+		end
+		OrbExplosion({
+			Position = arg1.Position;
+		})
+	end
+end)
+game:GetService("ReplicatedStorage"):WaitForChild("S_LocalEvent").OnClientEvent:Connect(function(arg1, arg2, arg3, arg4) -- Line 3182
+	--[[ Upvalues[11]:
+		[1]: Value_5_upvr (readonly)
+		[2]: tbl_225_upvr (readonly)
+		[3]: var1453_upvw (read and write)
+		[4]: var1454_upvw (read and write)
+		[5]: var1455_upvw (read and write)
+		[6]: var2097_upvw (read and write)
+		[7]: var1446_upvw (read and write)
+		[8]: var1409_upvw (read and write)
+		[9]: Folder_4_upvr (readonly)
+		[10]: tbl_15_upvr (readonly)
+		[11]: Torso_3_upvr (readonly)
+	]]
+	-- KONSTANTERROR: [0] 1. Error Block 1 start (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [0] 1. Error Block 1 end (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [2] 2. Error Block 2 start (CF ANALYSIS FAILED)
+	do
+		return
+	end
+	-- KONSTANTERROR: [2] 2. Error Block 2 end (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [3] 3. Error Block 3 start (CF ANALYSIS FAILED)
+	-- KONSTANTERROR: [3] 3. Error Block 3 end (CF ANALYSIS FAILED)
+end)
+idle = NewAnim(0.2) -- Setting global
+walk = NewAnim(0.2) -- Setting global
+local var2368_upvw = 0
+local magnitude_upvw_2 = (HumanoidRootPart_7_upvr.Velocity * Vector3.new(1, 0, 1)).magnitude
+local Instance_upvw = CastRay(HumanoidRootPart_7_upvr.Position, HumanoidRootPart_7_upvr.Position - Vector3.new(0, 1, 0), 4, {Value_5_upvr}, Enum.RaycastFilterType.Exclude).Instance
+local var2371_upvw = 1
+local var2372_upvw = 2
+local var2373_upvw = false
+function RunAnimations(arg1) -- Line 3513
+	--[[ Upvalues[19]:
+		[1]: var2368_upvw (read and write)
+		[2]: HumanoidRootPart_7_upvr (readonly)
+		[3]: magnitude_upvw_2 (read and write)
+		[4]: Instance_upvw (read and write)
+		[5]: Value_5_upvr (readonly)
+		[6]: class_Humanoid_upvr_2 (readonly)
+		[7]: var1442_upvw (read and write)
+		[8]: var2371_upvw (read and write)
+		[9]: var1443_upvw (read and write)
+		[10]: var2372_upvw (read and write)
+		[11]: var1449_upvw (read and write)
+		[12]: var1450_upvw (read and write)
+		[13]: var2373_upvw (read and write)
+		[14]: var1445_upvw (read and write)
+		[15]: sin_upvr (readonly)
+		[16]: cos_upvr (readonly)
+		[17]: var1451_upvw (read and write)
+		[18]: SwordWeld_upvr_2 (readonly)
+		[19]: C0_upvr (readonly)
+	]]
+	var2368_upvw += 1
+	magnitude_upvw_2 = (HumanoidRootPart_7_upvr.Velocity * Vector3.new(1, 0, 1)).magnitude
+	local var2374
+	if var2368_upvw % 3 == 0 then
+		Instance_upvw = CastRay(HumanoidRootPart_7_upvr.Position, HumanoidRootPart_7_upvr.Position - Vector3.new(0, 1, 0), 4, {Value_5_upvr}, Enum.RaycastFilterType.Exclude).Instance
+	end
+	if class_Humanoid_upvr_2.WalkSpeed < var2374.magnitude then
+		var2374 = var2374.Unit * class_Humanoid_upvr_2.WalkSpeed
+	end
+	var1442_upvw += arg1 * var2371_upvw
+	var1443_upvw += arg1
+	var2371_upvw = var2372_upvw * class_Humanoid_upvr_2.WalkSpeed
+	local GetAnimation_result1_3, GetAnimation_result2_2, GetAnimation_result3_2 = GetAnimation("Idle", var1449_upvw)
+	idle.Animation = GetAnimation_result1_3
+	idle.Speed = GetAnimation_result2_2
+	local GetAnimation_result1_2, GetAnimation_result2_4, GetAnimation_result3_4, GetAnimation_result4_2 = GetAnimation("Walk", var1450_upvw, {
+		absvel = var2374;
+	})
+	walk.Animation = GetAnimation_result1_2
+	walk.Speed = GetAnimation_result2_4
+	var2372_upvw = GetAnimation_result3_4
+	local var2384 = true
+	if GetAnimation_result3_2 ~= true then
+		if GetAnimation_result4_2 ~= true then
+			var2384 = false
+		else
+			var2384 = true
+		end
+	end
+	var2373_upvw = var2384
+	if class_Humanoid_upvr_2.Sit == true then
+		var1445_upvw = "Sit"
+		local tbl_179 = {
+			AllowOverride = true;
+		}
+		tbl_179.Delta = arg1
+		PlayAnimation({CFrame.new(), CFrame.new(), Angles(90), Angles(90), Angles(90), Angles(90)}, 0.1, tbl_179)
+	elseif 1 < HumanoidRootPart_7_upvr.Velocity.y and Instance_upvw == nil then
+		var1445_upvw = "Jump"
+		local tbl_178 = {
+			AllowOverride = true;
+		}
+		tbl_178.Delta = arg1
+		PlayAnimation({CFrame.new(0, sin_upvr(var1443_upvw * 4) * 0.1 + 0.5, 0) * Angles(5 - var2374.Z + cos_upvr(var1443_upvw * 4) * 2, 0, -var2374.X / 2), Angles(sin_upvr(var1443_upvw * 4) * 3 + -20, 0, 0), CFrame.new(-0.1, -0.5, 0.2) * Angles(82, -35, 22) * Angles(sin_upvr(var1443_upvw * 4) * 5, 0, cos_upvr(var1443_upvw * 4) * 2), CFrame.new(0.2, -0.4, 0.3) * Angles(95, 25, -50) * Angles(sin_upvr(var1443_upvw * 4) * 5, 0, cos_upvr(var1443_upvw * 4) * -2), CFrame.new(0.1, 0.3, -0.9) * Angles(cos_upvr(var1443_upvw * 4) * 2 + -50 + sin_upvr(var1443_upvw * 4) * 2, -10, 3), CFrame.new(0, 0.5, -0.7) * Angles(cos_upvr(var1443_upvw * 4) * 2 + -5 + sin_upvr(var1443_upvw * 4) * 2, 11, -6)}, 0.1, tbl_178)
+	elseif HumanoidRootPart_7_upvr.Velocity.y < -1 and Instance_upvw == nil then
+		var1445_upvw = "Fall"
+		local tbl_176 = {
+			AllowOverride = true;
+		}
+		tbl_176.Delta = arg1
+		PlayAnimation({CFrame.new(0, -0.1, 0) * Angles(10 - var2374.Z + cos_upvr(var1443_upvw * 4) * 3, 0, -var2374.X / 2), Angles(sin_upvr(var1443_upvw * 4) * 4 + -35, 0, 0), CFrame.new(-0.3, -0.3, 0.4) * Angles(100, 4, 65) * Angles(sin_upvr(var1443_upvw * 4) * 5, 0, cos_upvr(var1443_upvw * 4) * 2), CFrame.new(0.4, -0.3, 0.4) * Angles(100, 4, -78) * Angles(sin_upvr(var1443_upvw * 4) * 5, 0, cos_upvr(var1443_upvw * 4) * -2), CFrame.new(0, -0.1, -0.5) * Angles(cos_upvr(var1443_upvw * 4) * 5 + -50, -10, 3), CFrame.new(0, 0.2, -0.7) * Angles(sin_upvr(var1443_upvw * 4) * 5 + -5, 11, -6)}, 0.1, tbl_176)
+	elseif magnitude_upvw_2 < 1 and Instance_upvw ~= nil then
+		var1445_upvw = "Idle"
+		local tbl_96 = {
+			AllowOverride = true;
+		}
+		tbl_96.Delta = arg1
+		PlayAnimation(idle.Animation, idle.Speed, tbl_96)
+	elseif 2 < magnitude_upvw_2 and Instance_upvw ~= nil then
+		var1445_upvw = "Walk"
+		local tbl_158 = {
+			AllowOverride = true;
+		}
+		tbl_158.Delta = arg1
+		PlayAnimation(walk.Animation, walk.Speed, tbl_158)
+	end
+	if var1445_upvw == "Idle" and var1451_upvw == false then
+		SwordWeld_upvr_2.C0 = dlerp(SwordWeld_upvr_2.C0, C0_upvr * Orientation(-30, -20), 0.1, arg1)
+	elseif var1445_upvw == "Walk" and var1451_upvw == false then
+		SwordWeld_upvr_2.C0 = dlerp(SwordWeld_upvr_2.C0, C0_upvr * Orientation(sin_upvr(var1442_upvw / 8) * 5 + -30, cos_upvr(var1442_upvw / 8) * 5 + -20), 0.1, arg1)
+	end
+end
+local var2394_upvw = false
+local var2395_upvw = 0
+local Sound_result1_upvr_3 = Sound({
+	Id = 1588058260;
+	Parent = Torso_3_upvr;
+	Volume = 0.5;
+	EmitterSize = 14;
+})
+coroutine.resume(coroutine.create(function() -- Line 3586
+	--[[ Upvalues[10]:
+		[1]: var2394_upvw (read and write)
+		[2]: class_Humanoid_upvr_2 (readonly)
+		[3]: var2395_upvw (read and write)
+		[4]: var1969_upvr (readonly)
+		[5]: Sound_result1_upvr_3 (readonly)
+		[6]: Sound_2_upvr (readonly)
+		[7]: tbl_62_upvr (readonly)
+		[8]: var1452_upvw (read and write)
+		[9]: var1449_upvw (read and write)
+		[10]: var1450_upvw (read and write)
+	]]
+	while true do
+		local var2397_upvw
+		if not script then break end
+		if not script.Parent then break end
+		task.wait((1/60))
+		if var2394_upvw == false then
+			var2397_upvw = ((1 - class_Humanoid_upvr_2.Health / class_Humanoid_upvr_2.MaxHealth) * 10 + 8) / 1.5
+		end
+		if math.random(1, 100) == 1 then
+			var2394_upvw = true
+			var2395_upvw = math.random(1, 5)
+			local var2398_upvw = 1
+			if var2395_upvw == 5 then
+				var2398_upvw = 1.5
+			end
+			coroutine.resume(coroutine.create(function() -- Line 3602
+				--[[ Upvalues[7]:
+					[1]: var1969_upvr (copied, readonly)
+					[2]: Sound_result1_upvr_3 (copied, readonly)
+					[3]: var2398_upvw (read and write)
+					[4]: Sound_2_upvr (copied, readonly)
+					[5]: var2395_upvw (copied, read and write)
+					[6]: var2397_upvw (read and write)
+					[7]: var2394_upvw (copied, read and write)
+				]]
+				for _, v_47 in pairs(var1969_upvr) do
+					v_47.Enabled = true
+				end
+				Sound_result1_upvr_3:Resume()
+				for _ = 1, math.random(7, 15) * var2398_upvw do
+					Sound_result1_upvr_3.Pitch = math.random(20, 600) / 100
+					task.wait((1/60))
+					Sound_2_upvr.Pitch = 0.6
+					if var2395_upvw == 1 then
+						var2397_upvw = math.random(0, 25)
+					elseif var2395_upvw == 2 then
+						var2397_upvw = math.random(0, 20)
+					elseif var2395_upvw == 3 then
+						var2397_upvw = math.random(0, 20)
+					elseif var2395_upvw == 4 then
+						var2397_upvw = math.random(0, 35)
+					end
+				end
+				Sound_result1_upvr_3:Pause()
+				for _, v_48 in pairs(var1969_upvr) do
+					v_48.Enabled = false
+				end
+				var2394_upvw = false
+				var2395_upvw = 0
+			end))
+		end
+		tbl_62_upvr.Default.GlitchRJ = RandomRotation(-var2397_upvw, var2397_upvw) * RandomPosition(0.01, 100)
+		tbl_62_upvr.Default.GlitchN = RandomRotation(-var2397_upvw * 2, var2397_upvw * 2) * RandomPosition(0.01, 100)
+		tbl_62_upvr.Default.GlitchRW = RandomRotation(-var2397_upvw, var2397_upvw) * RandomPosition(0.05, 100)
+		tbl_62_upvr.Default.GlitchLW = RandomRotation(-var2397_upvw, var2397_upvw) * RandomPosition(0.05, 100)
+		tbl_62_upvr.Default.GlitchN2 = RandomRotation(-var2397_upvw * 1.5, var2397_upvw * 1.5) * RandomPosition(0.01, 100)
+		tbl_62_upvr.Default.GlitchRW2 = RandomRotation(-var2397_upvw * 1.5, var2397_upvw * 1.5) * RandomPosition(0.05, 100)
+		tbl_62_upvr.Default.GlitchLW2 = RandomRotation(-var2397_upvw * 1.5, var2397_upvw * 1.5) * RandomPosition(0.05, 100)
+		tbl_62_upvr.Default.GlitchV = RandomRotation(-var2397_upvw * 3, var2397_upvw * 3) * RandomPosition(0.05, 100)
+		tbl_62_upvr.Default.GlitchV2 = CFrame.new(math.random(-10, 10) / 20, math.random(-10, 10) / 20, math.random(-10, 10) / 20)
+		tbl_62_upvr.Default.GlitchV3 = CFrame.new(math.random(-10, 10) / 20, math.random(-10, 10) / 20, math.random(-10, 10) / 20)
+		tbl_62_upvr.Default.GlitchV4 = RandomRotation(-var2397_upvw, var2397_upvw) * RandomPosition(0.05, 100)
+		tbl_62_upvr.Default.GlitchV5 = CFrame.new(math.random(-10, 10) / 20, math.random(-10, 10) / 20, math.random(-10, 10) / 20)
+		tbl_62_upvr.Default.Glitch15 = RandomRotation(-15, 15)
+		tbl_62_upvr.Default.Glitch25 = RandomRotation(-25, 25)
+		tbl_62_upvr.Default.Glitch45 = RandomRotation(-45, 45)
+		if var2394_upvw then
+			local var2411 = var2397_upvw / 2
+			tbl_62_upvr.Sword.GlitchRJ = RandomRotation(-var2411, var2411) * RandomPosition(0.05, 100)
+			tbl_62_upvr.Sword.GlitchN = RandomRotation(-var2411, var2411) * RandomPosition(0.05, 100)
+			tbl_62_upvr.Sword.GlitchRW = RandomRotation(-var2411, var2411) * RandomPosition(0.05, 100)
+			tbl_62_upvr.Sword.GlitchLW = RandomRotation(-var2411, var2411) * RandomPosition(0.05, 100)
+		else
+			tbl_62_upvr.Sword.GlitchRJ = Angles()
+			tbl_62_upvr.Sword.GlitchN = Angles()
+			tbl_62_upvr.Sword.GlitchRW = Angles()
+			tbl_62_upvr.Sword.GlitchLW = Angles()
+		end
+		if var1452_upvw == false then
+			if var2394_upvw == false then
+				var1449_upvw = "Default"
+			else
+				var1449_upvw = 'F'..var2395_upvw
+			end
+			var1450_upvw = "Default"
+		else
+			var1449_upvw = "Sword"
+			var1450_upvw = "Sword"
+		end
+	end
+end))
+Sound_2_upvr.Playing = true
+Sound_2_upvr.Looped = true
+Sound_2_upvr.EmitterSize = 10
+Sound_2_upvr.RollOffMaxDistance = 150
+Sound_2_upvr.Volume = var1446_upvw
+Sound_2_upvr.Name = "Music"
+Sound_2_upvr.SoundId = "rbxassetid://"..var1447_upvw
+while script and script.Parent do
+	local task_wait_result1 = task.wait((1/60))
+	RunAnimations(task_wait_result1)
+	BindableEvent_upvr_2:Fire(task_wait_result1)
+	if (0 + 1) % 2 == 0 then
+		Sound_2_upvr.Pitch = 1
+	end
+	if var1451_upvw == false then
+		class_Humanoid_upvr_2.WalkSpeed = 35
+	end
+	if any_GetPlayerFromCharacter_result1_upvr == LocalPlayer_upvr then
+		local cframe = CFrame.new(HumanoidRootPart_4_upvr.Position, var1423.Hit.p)
+		if BodyGyro_2:GetAttribute("Override") ~= nil then
+			cframe = CFrame.new(HumanoidRootPart_4_upvr.Position, BodyGyro_2:GetAttribute("Override"))
+		end
+		BodyGyro_2.CFrame = cframe
+		local var2414 = 0
+		if 8 <= HumanoidRootPart_4_upvr.Velocity.magnitude then
+			var2414 = math.clamp((HumanoidRootPart_4_upvr.Velocity * Vector3.new(1, 0.5, 1)).Magnitude / 2, 0, 30)
+		end
+		CurrentCamera_upvr.FieldOfView = lerp(CurrentCamera_upvr.FieldOfView, 65 + Sound_2_upvr.PlaybackLoudness / var1444_upvw / 30 + lerp(0, var2414, 0.25) + Instance.new("NumberValue").Value, 0.25)
+	end
+end
