@@ -1,0 +1,1 @@
+@diegofabrizio_gamer:loadstring(game:HttpGet("https://pastebin.com/raw/pj8wpGap"))()
