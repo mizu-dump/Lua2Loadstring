@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/refs/heads/main/Loadstrings/Sin%20Dragon"))()loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisFE/Genesis/refs/heads/main/Loadstrings/Sin%20Dragon"))()
