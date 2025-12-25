@@ -1,0 +1,1 @@
+loadstring(game:HttpGet(“https://github.com/mizu-dump/Lua2Loadstring/raw/main/example.lua”))((loadstring(game:HttpGet("https://raw.githubusercontent.com/mizu-dump/Lua2Loadstring/main/Main/Mizu-dump.lua"))()
